@@ -113,7 +113,7 @@ author:
   location         : "Salt Lake City, UT"
   email            : #"patrick.debiasse@gmail.com"
   links:
-    - label: "Email"
+    - label: "patrick.debiasse@gmail.com"
       icon: "fas fa-fw fa-envelope-square"
       url: mailto:patrick.debiasse@gmail.com
     - label: "LinkedIn"
