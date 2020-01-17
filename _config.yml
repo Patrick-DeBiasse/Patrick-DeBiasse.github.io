@@ -117,7 +117,7 @@ author:
       icon: "fas fa-fw fa-envelope-square"
       url: mailto:patrick.debiasse@gmail.com
     - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin-square"
+      icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/patrick-debiasse/"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
