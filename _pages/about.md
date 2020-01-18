@@ -13,4 +13,4 @@ My primary interest is in healthcare and improving patient outcomes. For more de
 
 <iframe src="https://drive.google.com/file/d/10KzQGjtnPAH9S4Si7A1D2wdJB5C3eAUU/preview" width="640" height="830"></iframe>
 
-If you have any questions or comments, feel free to contact me at [patrick.debiasse@gmail.com](patrick.debiasse@gmail.com).
+If you have any questions or comments, I can be reached at [patrick.debiasse@gmail.com](patrick.debiasse@gmail.com).
