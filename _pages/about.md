@@ -2,7 +2,7 @@
 title: "About"
 permalink: /about/
 header:
-  image: "/images/about banner2-min.jpg"
+  image: "/images/about banner2-min-resized.jpg"
 ---
 
 I'm an aspiring data scientist and mechanical engineer with 4 years of diverse experience in design and manufacturing.
