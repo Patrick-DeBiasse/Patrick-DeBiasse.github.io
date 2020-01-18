@@ -32,4 +32,4 @@ description: Resume
 layout: pdf
 ---
 
-<iframe src="https://drive.google.com/file/d/10KzQGjtnPAH9S4Si7A1D2wdJB5C3eAUU/view?usp=sharing" width="100%" height="100%"></iframe>
+<iframe src="https://drive.google.com/file/d/10KzQGjtnPAH9S4Si7A1D2wdJB5C3eAUU/preview" width="100%" height="100%"></iframe>
