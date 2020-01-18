@@ -7,7 +7,7 @@ header:
 
 I'm an aspiring data scientist and mechanical engineer with 4 years of diverse experience in design and manufacturing.
 
-Not having a formal background in data science, I made this portfolio to share examples of projects I've completed using Python, R, and other popular tools.
+Not having a formal background in data science, I made this portfolio to share examples of work I've done using Python, R, and other popular tools.
 
 My primary interest is in healthcare and improving patient outcomes. For more details on my experience to-date, please see my resume below.  
 
