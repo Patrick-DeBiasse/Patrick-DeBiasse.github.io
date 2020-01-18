@@ -5,7 +5,11 @@ header:
   image: #"/images/"
 ---
 
-I am an aspiring data scientist and mechanical engineer with over 4 years of practical experience in design and manufacturing. My previous work includes:
+I am an aspiring data scientist and mechanical engineer with over 4 years of practical experience in design and manufacturing.
+
+Not having a formal background in data science or software development, I made this portfolio to share work I have done using data science tools and approaches.
+
+My previous experience includes:
 
   **Becton Dickinson - Manufacturing Development Program** (3 one-year rotations)
         Jun 2019 - Current: *Injection Molding engineer*             Sandy, UT
@@ -19,4 +23,13 @@ I am an aspiring data scientist and mechanical engineer with over 4 years of pra
         2018: Continuous Improvement Engineer                     Holdrege, NE
               2017: Sustaining R&D engineer                       Franklin Lakes, NJ
 
-Not having a formal background in data science or software development, my hope for this portfolio is to demonstrate my competence with modern data science languages and approaches.
+For more details, please see my resume below:
+
+
+---
+title: "Resume - Patrick DeBiasse"
+description: Resume
+layout: pdf
+---
+
+<iframe src="https://drive.google.com/file/d/10KzQGjtnPAH9S4Si7A1D2wdJB5C3eAUU/view?usp=sharing" width="100%" height="100%"></iframe>
