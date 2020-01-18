@@ -9,8 +9,8 @@ I'm an aspiring data scientist and mechanical engineer with 4 years of diverse e
 
 Not having a formal background in data science, I made this portfolio to share examples of projects I've completed using Python, R, and other popular tools.
 
-My primary interest is in healthcare and improving patient outcomes. For more details on my previous experience, please see my resume below.  
+My primary interest is in healthcare and improving patient outcomes. For more details on my experience to-date, please see my resume below.  
 
 <iframe src="https://drive.google.com/file/d/10KzQGjtnPAH9S4Si7A1D2wdJB5C3eAUU/preview" width="640" height="830"></iframe>
 
-I'd be happy to provide references, just send me a note at [patrick.debiasse@gmail.com](patrick.debiasse@gmail.com).
+If you have any questions or comments, don't hesitate to contact me at [patrick.debiasse@gmail.com](patrick.debiasse@gmail.com).
