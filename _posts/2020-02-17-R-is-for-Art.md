@@ -28,6 +28,8 @@ topographical maps. Here is Nantucket Island:
 
 <img src="{{ site.url }}{{ site.baseurl }}/images/R%20is%20for%20Art/1_Nantucket%20Island_metalic.png" alt="Nantucket Island, by Jim Abraham.">
 
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/1_Nantucket Island_metalic.PNG" alt="Nantucket Island, by Jim Abraham.">
+
 </center>
 
 About a month after meeting Jim, I stumbled upon Rayshader - an R
