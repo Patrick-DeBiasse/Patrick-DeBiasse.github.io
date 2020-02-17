@@ -3,9 +3,6 @@ layout: post
 title: "R is for Art"
 date: 2020-02-17
 tags: [R, Data Visualization]
-header:
-  image: #"/images/"
-excerpt: "3D Topography using R"
 ---
 
 I’d guess a common source of anxiety when flying is anticipating your
