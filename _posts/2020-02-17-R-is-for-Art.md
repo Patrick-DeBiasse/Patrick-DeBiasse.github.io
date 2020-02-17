@@ -44,8 +44,9 @@ with elevation data and a satellite image overlay:
 
 <center>
 
-![**Nantucket Island, Rendered with Elevation
-Data.**](C:\Users\Pat\Desktop\Patrick-DeBiasse.github.io\images\R%20is%20for%20Art\2_Nantucket%20Island_rendered.png)
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/R_is_for_Art/2_Nantucket Island_rendered.PNG" alt="Nantucket Island, Rendered with R.">
+
+**Nantucket Island, Rendered with Elevation Data.**
 
 </center>
 
