@@ -1,7 +1,7 @@
 ---
 title: "R is for Art"
 author: "Patrick DeBiasse"
-date: "2/17/2020"
+date: "2020-02-17"
 output: 
   html_document:
     keep_md: true
