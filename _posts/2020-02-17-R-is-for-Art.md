@@ -147,6 +147,8 @@ render_movie('SLC_Living_Room_Trail')
 
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/R_is_for_Art/3_livingroomtrail_onerotation_reduced.gif" alt="Living Room Trail, SLC, Rendered with R.">
 
+**3D Topography of Living Room Trail and Surrounding Area.**
+
 </center>
 
 **3D Topography of Living Room Trail and Surrounding Area.**
