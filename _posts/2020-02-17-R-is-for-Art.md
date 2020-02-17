@@ -23,12 +23,8 @@ topographical maps. Here is Nantucket Island:
 
 <center>
 
-![**Nantucket Island, by Jim Abraham. View more of his work**
-[here.](https://www.abrahamartistry.com/)](\images\R%20is%20for%20Art\1_Nantucket%20Island_metalic.png\)
-
-<img src="{{ site.url }}{{ site.baseurl }}/images/R%20is%20for%20Art/1_Nantucket%20Island_metalic.png" alt="Nantucket Island, by Jim Abraham.">
-
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/1_Nantucket Island_metalic.PNG" alt="Nantucket Island, by Jim Abraham.">
+**Nantucket Island, by Jim Abraham. View more of his work**[**here.**](https://www.abrahamartistry.com/)
 
 </center>
 
