@@ -2,7 +2,7 @@
 layout: archives
 permalink: /Projects/
 title: "Projects"
-author_profile: true
+#author_profile: true
   header:
     image: #"/images/add an image.png"
 ---
