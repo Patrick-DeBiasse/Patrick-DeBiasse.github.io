@@ -27,7 +27,7 @@ topographical maps. Here is Nantucket Island:
 
 </center>
 
-<p style="text-align: center; font-style: italic;">Nantucket Island, by Jim Abraham. View more of his work [here.](https://www.abrahamartistry.com/).</p>
+<p style="text-align: center; font-style: italic;">Nantucket Island, by Jim Abraham. View more of his work <a href="https://www.abrahamartistry.com/">here.</a></p>
 
 About a month after meeting Jim, I stumbled upon Rayshader - an R
 package that allows you to create detailed 3D renderings of topography
