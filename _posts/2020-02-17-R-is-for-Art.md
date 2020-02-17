@@ -44,7 +44,7 @@ with elevation data and a satellite image overlay:
 
 <center>
 
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/R_is_for_Art/2_Nantucket Island_rendered.png" alt="Nantucket Island, Rendered with R.">
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/R_is_for_Art/2_Nantucket Island_rendered.png" alt="Nantucket Island, rendered with R.">
 
 </center>
 
@@ -149,7 +149,7 @@ render_movie('SLC_Living_Room_Trail')
 
 </center>
 
-<p style="text-align: center; font-style: italic;">3D Topography of Living Room Trail and Surrounding Area.</p>
+<p style="text-align: center; font-style: italic;">3D Topography of Living Room Trail and surrounding area.</p>
 
 **Closing thoughts**:
 
@@ -171,7 +171,7 @@ the Living Room Trail looks like, represented with standard topography:
 
 </center>
 
-<p style="text-align: center; font-style: italic;">Living Room Trail Topography (from AllTrails.com).</p>
+<p style="text-align: center; font-style: italic;">Standard Living Room Trail topography (from AllTrails.com).</p>
 
 If AllTrails (a popular hiking app) replaced their standard
 topographical maps with 3D renderings of this sort, users would benefit
