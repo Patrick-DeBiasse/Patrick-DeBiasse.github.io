@@ -145,10 +145,11 @@ render_movie('SLC_Living_Room_Trail')
 
 <center>
 
-![**3D Topography of Living Room Trail and Surrounding
-Area.**](C:\Users\Pat\Desktop\Patrick-DeBiasse.github.io\images\R%20is%20for%20Art\3_livingroomtrail_onerotation_reduced.gif)
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/R_is_for_Art/3_livingroomtrail_onerotation_reduced.gif" alt="Living Room Trail, SLC, Rendered with R.">
 
 </center>
+
+**3D Topography of Living Room Trail and Surrounding Area.**
 
 **Closing Thoughts**:
 
@@ -166,10 +167,11 @@ the Living Room Trail looks like, represented with standard topography:
 
 <center>
 
-![**Living Room Trail Topography (from
-AllTrails.com).**](C:\Users\Pat\Desktop\Patrick-DeBiasse.github.io\images\R%20is%20for%20Art\4_living%20room%20trail_topography.PNG)
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/R_is_for_Art/3_livingroomtrail_topography.PNG" alt="Living Room Trail Topographical Map.">
 
 </center>
+
+**Living Room Trail Topography (from AllTrails.com).**
 
 If AllTrails (a popular hiking app) replaced their standard
 topographical maps with 3D renderings of this sort, users would benefit
