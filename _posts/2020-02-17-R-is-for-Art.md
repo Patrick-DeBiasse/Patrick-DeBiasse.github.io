@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "R is for Art"
 date: 2020-02-17
 tags: [R, data science, data visualization]
@@ -24,7 +25,7 @@ topographical maps. Here is Nantucket Island:
 <center>
 
 ![**Nantucket Island, by Jim Abraham. View more of his work**
-[here.](https://www.abrahamartistry.com/)](C:\Users\Pat\Desktop\Patrick-DeBiasse.github.io\images\R%20is%20for%20Art\1_Nantucket%20Island_metalic.png)
+[here.](https://www.abrahamartistry.com/)](\images\R%20is%20for%20Art\1_Nantucket%20Island_metalic.png)
 
 </center>
 
