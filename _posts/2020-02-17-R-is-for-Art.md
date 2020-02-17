@@ -48,7 +48,7 @@ with elevation data and a satellite image overlay:
 
 </center>
 
-<p style="text-align: center; font-style: italic;">Nantucket Island, Rendered with R.</p>
+<p style="text-align: center; font-style: italic;">Nantucket Island, rendered with R.</p>
 
 Admittedly, flat regions like Nantucket Island don’t lend themselves to
 exciting 3D renderings (there’s just not a lot of the 3rd dimension
