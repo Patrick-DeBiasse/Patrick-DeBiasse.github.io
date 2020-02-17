@@ -27,7 +27,7 @@ topographical maps. Here is Nantucket Island:
 
 </center>
 
-->_Nantucket Island, by Jim Abraham. View more of his work [here.](https://www.abrahamartistry.com/)_<-
+<p style="text-align: center; font-style: italic;">Nantucket Island, by Jim Abraham. View more of his work [here.](https://www.abrahamartistry.com/).</p>
 
 About a month after meeting Jim, I stumbled upon Rayshader - an R
 package that allows you to create detailed 3D renderings of topography
@@ -48,7 +48,7 @@ with elevation data and a satellite image overlay:
 
 </center>
 
-->_Nantucket Island, Rendered with Elevation Data._<-
+<p style="text-align: center; font-style: italic;">Nantucket Island, Rendered with Elevation Data.</p>
 
 Admittedly, flat regions like Nantucket Island don’t lend themselves to
 exciting 3D renderings (there’s just not a lot of the 3rd dimension
@@ -149,7 +149,7 @@ render_movie('SLC_Living_Room_Trail')
 
 </center>
 
-->_3D Topography of Living Room Trail and Surrounding Area._<-
+<p style="text-align: center; font-style: italic;">3D Topography of Living Room Trail and Surrounding Area.</p>
 
 **Closing thoughts**:
 
