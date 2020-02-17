@@ -44,7 +44,7 @@ with elevation data and a satellite image overlay:
 
 <center>
 
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/R_is_for_Art/2_Nantucket Island_rendered.PNG" alt="Nantucket Island, Rendered with R.">
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/R_is_for_Art/2_Nantucket Island_rendered.png" alt="Nantucket Island, Rendered with R.">
 
 </center>
 
