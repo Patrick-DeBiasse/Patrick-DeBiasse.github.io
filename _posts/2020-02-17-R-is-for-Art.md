@@ -167,7 +167,7 @@ the Living Room Trail looks like, represented with standard topography:
 
 <center>
 
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/R_is_for_Art/3_livingroomtrail_topography.PNG" alt="Living Room Trail Topographical Map.">
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/R_is_for_Art/4_living room trail_topography.PNG" alt="Living Room Trail Topographical Map.">
 
 </center>
 
