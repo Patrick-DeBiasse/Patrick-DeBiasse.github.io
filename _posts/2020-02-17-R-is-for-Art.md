@@ -27,7 +27,7 @@ topographical maps. Here is Nantucket Island:
 
 </center>
 
-_Nantucket Island, by Jim Abraham. View more of his work_ [here.](https://www.abrahamartistry.com/)
+->_Nantucket Island, by Jim Abraham. View more of his work [here.](https://www.abrahamartistry.com/)_<-
 
 About a month after meeting Jim, I stumbled upon Rayshader - an R
 package that allows you to create detailed 3D renderings of topography
@@ -48,7 +48,7 @@ with elevation data and a satellite image overlay:
 
 </center>
 
-_Nantucket Island, Rendered with Elevation Data._
+->_Nantucket Island, Rendered with Elevation Data._<-
 
 Admittedly, flat regions like Nantucket Island don’t lend themselves to
 exciting 3D renderings (there’s just not a lot of the 3rd dimension
@@ -149,14 +149,14 @@ render_movie('SLC_Living_Room_Trail')
 
 </center>
 
-_3D Topography of Living Room Trail and Surrounding Area._
+->_3D Topography of Living Room Trail and Surrounding Area._<-
 
 **Closing thoughts**:
 
 3D visualizations of topography have quite a few promising applications
-- helping Jim spend more time with his pieces and less time scrolling
-through 2D terrain is one fairly niche use-case (nonetheless one I’m
-excited about supporting).
+helping Jim spend more time with his pieces and less time scrolling through
+2D terrain is one fairly niche use-case (nonetheless one I’m excited about
+  supporting).
 
 For something that might appeal to a broader audience, I think replacing
 standard 2D topographical maps with 3D renderings would be a boon for
@@ -171,7 +171,7 @@ the Living Room Trail looks like, represented with standard topography:
 
 </center>
 
-_Living Room Trail Topography (from AllTrails.com)._
+->_Living Room Trail Topography (from AllTrails.com)._<-
 
 If AllTrails (a popular hiking app) replaced their standard
 topographical maps with 3D renderings of this sort, users would benefit
