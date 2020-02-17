@@ -1,10 +1,11 @@
 ---
 title: "R is for Art"
 author: "Patrick DeBiasse"
-date: "2020-02-17"
-output: 
+date: '2020-02-17'
+output:
   html_document:
-    keep_md: true
+    keep_md: yes
+  pdf_document: default
 ---
 
 I'd guess a common source of anxiety when flying is anticipating your immediate neighbors - the screeching child, the sniffler who's "pretty sure it's just allergies", the broad and sharp-elbowed. Once seated 3 inches from one (or a few) of these, no amount of stroopwafel and headphone volume can really salvage things.  
