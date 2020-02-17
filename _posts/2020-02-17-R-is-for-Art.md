@@ -171,7 +171,7 @@ the Living Room Trail looks like, represented with standard topography:
 
 </center>
 
-->_Living Room Trail Topography (from AllTrails.com)._<-
+<p style="text-align: center;">_Living Room Trail Topography (from AllTrails.com)._</p>
 
 If AllTrails (a popular hiking app) replaced their standard
 topographical maps with 3D renderings of this sort, users would benefit
