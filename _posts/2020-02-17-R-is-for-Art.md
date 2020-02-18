@@ -33,21 +33,21 @@ I gladly offered to generate topography using Rayshader to relieve some of this 
 
 <p style="text-align: center; font-style: italic;">Nantucket Island, rendered with R.</p>
 
-Admittedly, flat regions like Nantucket Island don't lend themselves to exciting 3D renderings (there's just not a lot of the 3rd dimension going on). But for more mountainous regions, things can look much more interesting, while also being more  helpful for Jim.
+Admittedly, flat regions like Nantucket Island don't lend themselves to exciting 3D renderings. You can see some texture, but there's just not a lot of the third dimension going on. For more mountainous regions, things can look more interesting (while also being more  helpful for Jim).
 
 To demonstrate this, I generated 3D topography for one of Salt Lake City's more popular hikes - the Living Room Trail. It has approximately 1,000 feet of elevation gain, as opposed to Nantucket Island's meager 30.  
 
-See below for the code used to generate the rendering. I've broken the process into:
-- Installing the necessary packages
-- Setting up the region (coordinates and area of location to be visualized)
-- Setting the plot resolution
-- Downloading the region's elevation data and transforming it to Rayshader's liking.
-- Adding a satellite image overlay of the region.
-- Finally, rendering the final scene (in this case, a rotating "flyover" video of the region)
+See below for the code used to generate the rendering. In general, the process is as follows:
+1. Install the necessary packages
+2. Set up the region (coordinates and area of location to be visualized)
+3. Set the plot resolution
+4. Download the region's elevation data and transform it to Rayshader's liking
+5. Add a satellite image overlay of the region (optional, but cool)
+6. Render the final scene (in this case, a rotating "flyover" video of the region)
 
-The full, uninterrupted code can be found on my GitHub [here](https://github.com/Patrick-DeBiasse/Topography-Visualizations)
+The full, uninterrupted code can be found on my GitHub [here](https://github.com/Patrick-DeBiasse/Topography-Visualizations).
 
-**Install packages**:
+**Load packages**:
 
 ``` r
 library(rayshader) #3D plotting.
@@ -136,9 +136,9 @@ render_movie('SLC_Living_Room_Trail')
 
 **Closing thoughts**:
 
-3D visualizations of topography have quite a few promising applications. Helping Jim spend more time with his pieces and less time scrolling through 2D terrain is one fairly niche case (nonetheless one I'm excited about supporting).
+3D topography visualizations have quite a few promising applications. Helping Jim spend more time with his pieces and less time scrolling through 2D terrain is one fairly niche case (nonetheless one I'm excited about supporting).
 
-For something that might appeal to a broader audience, replacing standard 2D topographical maps with 3D renderings would be a boon for hikers. I for one have botched more than a few hikes not interpreting standard topogrpahical maps correctly. This is the nature of making 2D abstractions of what is inherently 3D information. See below for what the Living Room Trail looks like, represented with standard topography:
+For something that might appeal to a broader audience, replacing standard 2D topographical maps with 3D renderings would be a boon for hikers. I for one have botched more than a few hikes not interpreting standard topographical maps correctly. This is the nature of making 2D abstractions of what is inherently 3D information. See below for what the Living Room Trail looks like, represented with standard topography:
 
 <center>
 
@@ -148,7 +148,7 @@ For something that might appeal to a broader audience, replacing standard 2D top
 
 <p style="text-align: center; font-style: italic;">Standard Living Room Trail topography (from AllTrails.com).</p>
 
-If AllTrails (a popular hiking app) replaced their standard topographical maps with 3D renderings of this sort, users would benefit from a clearer idea of where they are located on the hike and the nature of what is down the trail. This would encourage more confident exploration and likely cut down on wrong turns. Once things warm up I'll see about adding an XYZ trace to the Living Room Trail rendering via my phone's GPS (assuming I don't get lost).   
+If AllTrails (a popular hiking app) replaced their standard topographical maps with 3D renderings that users could turn over and explore like any other 3D model, users would benefit from a clearer idea of where they are currently and what lies down the trail. This would encourage more confident exploration and likely cut down on wrong turns. Once things warm up, I think I'll see about adding an XYZ trace to the Living Room Trail rendering with lat/long/elevation data from my phone's GPS (assuming I don't get lost).   
 
 If you have any thoughts or questions on the above, please reach out:  [patrick.debiasse@gmail.com](patrick.debiasse@gmail.com).
 
