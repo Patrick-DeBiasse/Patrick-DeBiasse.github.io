@@ -9,7 +9,7 @@ excerpt: "Using R to visualize 3D Topography"
 
 A common source of anxiety when flying is anticipating your immediate neighbors - the screeching child, the sniffler who's "pretty sure it's just allergies", the max-screen-brightness-iPad on red-eye. Once seated 3 inches from one (or a few) of these, no amount of stroopwafel and headphone volume can really salvage things.  
 
-That said, now and then this forced proximity can be great. Case in point: this past November,  a 4 hour flight from Newark to Denver turned into a 4ish hour chat spanning best neighborhoods in Philly, new cancer treatments, food truck entrepreneurship, and (the inspiration for this work) metallic topographical maps. My new friend's name was Jim Abraham, and among other things, he hand-sculpts metallic topographical maps. Here is Nantucket Island:
+That said, now and then this forced proximity can be great. Case in point: this past November,  a 4 hour flight from Newark to Denver turned into a 4 hour chat spanning best neighborhoods in Philly, new cancer treatments, food truck entrepreneurship, and (the inspiration for this work) metallic topographical maps. My new friend's name was Jim Abraham, and among other things, he hand-sculpts metallic topographical maps. Here is Nantucket Island:
 
 <center>
 
@@ -35,7 +35,7 @@ I gladly offered to generate topography using Rayshader to relieve some of this 
 
 Admittedly, flat regions like Nantucket Island don't lend themselves to exciting 3D renderings. You can see some texture, but there's just not a lot of the third dimension going on. For more mountainous regions, things can look more interesting (while also being more  helpful for Jim).
 
-To demonstrate this, I generated 3D topography for one of Salt Lake City's more popular hikes - the Living Room Trail. It has approximately 1,000 feet of elevation gain, as opposed to Nantucket Island's meager 30.  
+To demonstrate this, I generated 3D topography for one of Salt Lake City's more popular hikes - the Living Room Trail. It has approximately 1,000 feet of elevation gain, as opposed to Nantucket Island's meager 30 feet.  
 
 See below for the code used to generate the rendering. In general, the process is as follows:
 1. Install the necessary packages
@@ -148,7 +148,7 @@ For something that might appeal to a broader audience, replacing standard 2D top
 
 <p style="text-align: center; font-style: italic;">Standard Living Room Trail topography (from AllTrails.com).</p>
 
-If AllTrails (a popular hiking app) replaced their standard topographical maps with 3D renderings that users could turn over and explore like any other 3D model, users would benefit from a clearer idea of where they are currently and what lies down the trail. This would encourage more confident exploration and likely cut down on wrong turns. Once things warm up, I think I'll see about adding an XYZ trace to the Living Room Trail rendering with lat/long/elevation data from my phone's GPS (assuming I don't get lost).   
+If AllTrails (a popular hiking app) replaced their standard topographical maps with 3D renderings that users could turn over and explore like any other 3D model, users would benefit from a clearer idea of where they are currently and what lies down the trail. This would encourage more confident exploration and likely cut down on wrong turns. Once things warm up, I think I'll see about adding an XYZ trace to the Living Room Trail rendering with latitude/longitude/elevation data from my phone's GPS (assuming I don't get lost).   
 
 If you have any thoughts or questions on the above, please reach out:  [patrick.debiasse@gmail.com](patrick.debiasse@gmail.com).
 
