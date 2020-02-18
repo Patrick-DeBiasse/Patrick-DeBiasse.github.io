@@ -4,7 +4,7 @@ date: 2020-02-17
 tags: [R, Data Visualization]
 header:
   image: #"/image/"
-excerpt: "Using R to Render 3D Topography"
+excerpt: "Using R to visualize 3D Topography"
 ---
 
 A common source of anxiety when flying is anticipating your immediate neighbors - the screeching child, the sniffler who's "pretty sure it's just allergies", the max-screen-brightness-iPad on red-eye. Once seated 3 inches from one (or a few) of these, no amount of stroopwafel and headphone volume can really salvage things.  
