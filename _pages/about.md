@@ -7,7 +7,7 @@ header:
 
 I am a mechanical engineer and aspiring data scientist with 4 years of diverse experience in medical device design and manufacturing.
 
-I discovered a passion for data wrangling and visualization after building advanced dashboards with Microsoft Access and Excel. The purpose of this portfolio is to share examples of work I've done using more advanced tools such as Python and R.
+I discovered a passion for working with data after building dashboards in Microsoft Access and Excel. The purpose of this portfolio is to share examples of work I've done with more powerful tools like Python and R.
 
 My primary career interest is in healthcare and improving patient outcomes. For more details on my background in this space, please see my resume below.  
 
