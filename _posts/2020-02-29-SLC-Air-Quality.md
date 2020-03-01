@@ -23,7 +23,7 @@ As a child, I remember watching my dad clean the fish tank. This was a bit of a 
 
 <p style="text-align: center; font-style: italic;"> Not the fish tank of my childhood, but similar. </p>
 
-Household fish aren’t the only ones subjected to such conditions! Many of us live in areas with dirty air. Here’s a map of PM2.5 pollution (tiny particles that damage our lungs) in the US:
+Household fish aren’t the only ones subjected to such conditions! Many of us live in areas with dirty air. Here’s a map of PM2.5 pollution (tiny particles that damage our lungs) in the U.S.:
 
 <center>
 
@@ -37,9 +37,9 @@ The blotch of red towards the middle-left of the country is Salt Lake City, wher
 
 I had heard about this prior to moving to SLC. But this winter I really haven’t seen a cause for concern. Admittedly, I don’t check air quality often, but if it was really that bad I think I’d have heard? That all said, I was curious to see what the air quality in SLC is today and how it has changed over time.
 
-Poking around, I came across an article in DeseretNews titled “Visualizing SLC air pollution in 35 years and what it tells us.” The article, which you can view [here]( https://www.deseret.com/2015/5/7/20564270/visualizing-slc-air-pollution-in-35-years-and-what-it-tells-us), links to a web-based visualization which unfortunately returns “site can’t be reached.” I sent the article’s author a note to let her know, and in the meantime decided to see if I could pull air quality data and visualize it myself.
+Poking around, I came across an article in DeseretNews titled “Visualizing SLC air pollution in 35 years and what it tells us.” The article, ([here])( https://www.deseret.com/2015/5/7/20564270/visualizing-slc-air-pollution-in-35-years-and-what-it-tells-us), links to a web-based visualization which unfortunately returns “site can’t be reached.” I sent the article’s author a note to let her know, and in the meantime decided to see if I could pull air quality data and visualize it myself.
 
-The EPA makes air quality data readily available to the public via their AirData Quality Monitors web app. Below are all the monitors across the U.S. for the 5 primary pollutants used in evaluating air quality (carbon monoxide, nitrogen dioxide, ozone, PM2.5, and sulfur dioxide):
+The EPA makes air quality data available to the public via their AirData Quality Monitors web app. Below are all the monitors across the U.S. for the 5 primary pollutants used in evaluating air quality (carbon monoxide, nitrogen dioxide, ozone, PM2.5, and sulfur dioxide):
 
 <center>
 
@@ -63,12 +63,14 @@ The EPA uses data from these monitors to calculate an Air Quality Index (known a
 
 <center>
 
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/AQI_table_reduced.png" alt="AQI table: 0-50=good, 51-100=moderate,101-150=unhealthy for sensitive groups, 151-200=unhealthy, 210-300=very unhealthy, hazardous=301-500">
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/AQI_table_reduced_2.png" alt="AQI table: 0-50=good, 51-100=moderate,101-150=unhealthy for sensitive groups, 151-200=unhealthy, 210-300=very unhealthy, hazardous=301-500">
 
 </center>
 
 <p style="text-align: center; font-style: italic;"> The Air Quality Index (AQI) categories. </p>
 
+
+((improve from below this))
 From the EPA:
 "EPA calculates the AQI for five major air pollutants regulated by the Clean Air Act:
 
@@ -473,22 +475,28 @@ The dataframes look good, let's graph things:
 ```python
 import matplotlib.pyplot as plt
 
-ax = df_AQI.plot.area(x='Year', color = ['green', 'yellow','orange', 'red', 'purple', 'black'])
-ax.legend(loc ='upper right',frameon=True, bbox_to_anchor=(1.75, 0.7))
+fig = df_AQI.plot.area(x='Year', color = ['green', 'yellow','orange', 'red', 'purple', 'black'])
+fig.legend(loc ='upper right',frameon=True, bbox_to_anchor=(1.75, 0.7))
+plt.ylabel('Days')
+#plt.savefig(r'C:\Users\Pat\Desktop\Patrick-DeBiasse.github.io\assets\images\SLC_Air_Quality\test_4.svg', format='svg', dpi=1200, bbox_inches='tight')
+plt.show()
 ```
 
 
+![png](output_7_0.png)
 
 
-    <matplotlib.legend.Legend at 0x117b29ee9c8>
+<center>
 
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/test_5.png" alt="Plot of AQI by year from 1980 to 2018">
 
+</center>
 
+<p style="text-align: center; font-style: italic;"> Plot of SLC's Daily AQI from 1980 to 2018. </p>
 
-![png](output_7_1.png)
+From 1980 to 2018, there has been a fairly dramatic shift towards improved air quality, as signified by an increase in "Good" and "Moderate" days and a decrease in "unhealthy" ones. 1982 would've been an especially good year to hold your breath.
 
-
-From 1980 to 2018, there has been a fairly steady march towards improved air quality, as signified by an increase in "Good" and "Moderate" days and a decrease in "unhealthy" ones. However, there does seem to be a decrease in the number of good air quality days in recent years. Looking specifically at that portion of the graph things become more clear:
+However, there does seem to be a decrease in the number of good air quality days in recent years. Looking specifically at that portion of the graph things become more clear:
 
 
 ```python
@@ -634,6 +642,8 @@ increase in SLC population requires more energy, more cars, more infrastructure
 **Conclusion**:
 
 discuss most promising ways to improve air quality
+
+if you coach youth sports, you consider canceling practice if the AQI goes above 100.
 
 
 SO2 went from the primary pollutant up to 1995, when ozone overtook it. As of 2018 ozone is far and away the largest contributor to poor air quality in Salt Lake City.Is anything being done about it?  
