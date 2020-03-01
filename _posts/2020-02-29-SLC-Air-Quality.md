@@ -488,7 +488,7 @@ plt.show()
 
 <center>
 
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/test_5.png" alt="Plot of AQI by year from 1980 to 2018">
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/test_6.png" alt="Plot of AQI by year from 1980 to 2018">
 
 </center>
 
