@@ -8,11 +8,9 @@ excerpt: "Using Python to collect and explore EPA air quality data."
 ---
 
 **Abstract**:
-
 Here I investigate how Salt Lake City's air quality has changed over time by downloading decades of data from the EPA, aggregating these ~40 csv files into one dataframe with pandas, then exploring the data with matplotlib.
 
 **Intro**:
-
 As a child, I remember watching my dad clean the fish tank. This was a bit of a monthly ritual, as over that length of time it would go from clear to cloudy to “we should not be pet owners” dirty. I always felt bad for the fish in the days preceding this cleaning – when they were clearly bopping around in some nasty stuff.
 
 <center>

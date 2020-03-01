@@ -8,11 +8,9 @@ excerpt: "Using R to visualize elevation data."
 ---
 
 **Abstract**:
-
 Here I use R to download and manipulate simple XYZ elevation data for one of Salt Lake City's most popular hikes into a rich 3D model of the region, complete with a satellite image overlay.  
 
 **Intro**:
-
 A common source of anxiety when flying is anticipating your immediate neighbors - the screeching child, the sniffler who's "pretty sure it's just allergies", the max-screen-brightness-iPad on red-eye. Once seated 3 inches from one (or a few) of these, no amount of stroopwafel and headphone volume can really salvage things.  
 
 That said, now and then this forced proximity can be great. Case in point: this past November,  a 4 hour flight from Newark to Denver turned into a 4 hour chat spanning best neighborhoods in Philly, new cancer treatments, food truck entrepreneurship, and (the inspiration for this work) metallic topographical maps. My new friend's name was Jim Abraham, and among other things, he hand-sculpts metallic topographical maps. Here is Nantucket Island:
@@ -141,7 +139,6 @@ render_movie('SLC_Living_Room_Trail')
 <p style="text-align: center; font-style: italic;">3D Topography of Living Room Trail and surrounding area.</p>
 
 **Closing thoughts**:
-
 3D topography visualizations have quite a few promising applications. Helping Jim spend more time with his pieces and less time scrolling through 2D terrain is one fairly niche case (nonetheless one I'm excited about supporting).
 
 For something that might appeal to a broader audience, replacing standard 2D topographical maps with 3D renderings would be a boon for hikers. I for one have botched more than a few hikes not interpreting standard topographical maps correctly. This is the nature of making 2D abstractions of what is inherently 3D information. See below for what the Living Room Trail looks like, represented with standard topography:
