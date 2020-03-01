@@ -8,40 +8,42 @@ excerpt: "Using Python to collect and explore EPA air quality data."
 ---
 
 **Abstract**:
-Here I investigate how Salt Lake City's air quality has changed over time by downloading decades of data from the EPA, aggregating these ~40 csv files into one dataframe with pandas, then exploring the data with matplotlib.
+
+Here I investigate how Salt Lake City's air quality has changed over time by downloading 38 years worth of data from the EPA, aggregating this information into one dataframe with pandas, then exploring the data visually with matplotlib.
 
 **Intro**:
-As a child, I remember watching my dad clean the fish tank. This was a bit of a monthly ritual, as over that length of time it would go from clear to cloudy to “we should not be pet owners” dirty. I always felt bad for the fish in the days preceding this cleaning – when they were clearly bopping around in some nasty stuff.
+
+As a child, I remember watching my dad clean the fish tank. This was a bit of a monthly ritual, as over that length of time it would go from clear to cloudy to “we should not be pet owners” dirty. I always felt bad for the fish in the days preceding this cleaning – when they were clearly bopping around in some nasty stuff:
 
 <center>
 
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/dirty_tank.jpg " alt="dirty fish tank">
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/dirty_tank_compressed.jpg " alt="dirty fish tank">
 
 </center>
 
 <p style="text-align: center; font-style: italic;"> Not the fish tank of my childhood, but similar. </p>
 
-Household fish aren’t the only ones subjected to such conditions, many of us live in areas with dirty air. Here’s a map of PM2.5 pollution (small particles that irritate lungs) in the US:
+Household fish aren’t the only ones subjected to such conditions! Many of us live in areas with dirty air. Here’s a map of PM2.5 pollution (tiny particles that damage our lungs) in the US:
 
 <center>
 
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/us_air.jpg " alt="U.S. map of PM2.5 air pollution">
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/us_air_compressed.jpg " alt="U.S. map of PM2.5 air pollution">
 
 </center>
 
 <p style="text-align: center; font-style: italic;"> PM2.5 air pollution across the U.S. </p>
 
-The blotch of red towards the middle-left of the country is Salt Lake City, where due to the perimeter of mountains surrounding the inhabited valley floor (forming a bowl-like geometry), nasty air can get trapped and accumulate. This is especially bad in the winter, when a blanket of warm air forms a “lid” so-to-speak on top of the colder valley floor – this effect is called the winter inversion, which is a spooky name.
+The blotch of red towards the middle-left of the country is Salt Lake City, where due to the perimeter of mountains surrounding the inhabited valley floor (forming a bowl-like geometry), nasty air can get trapped and accumulate. This is especially bad in the winter, when a blanket of warm air forms a “lid” on top of the colder valley floor – this is called the *winter inversion*, which is a spooky name.
 
-I had heard about this prior to moving to SLC. Second to skiing it seemed to be the main thing non-Utahns knew about the area. But this winter I really haven’t seen a cause for concern. Admittedly, I don’t check air quality often, but if it was really that bad I think I’d have heard? That all said, I was curious to see what the air quality in SLC is today and how it has changed over time.
+I had heard about this prior to moving to SLC. But this winter I really haven’t seen a cause for concern. Admittedly, I don’t check air quality often, but if it was really that bad I think I’d have heard? That all said, I was curious to see what the air quality in SLC is today and how it has changed over time.
 
-I came across an article in DeseretNews titled “Visualizing SLC air pollution in 35 years and what it tells us.” The article, which you can view [here]( https://www.deseret.com/2015/5/7/20564270/visualizing-slc-air-pollution-in-35-years-and-what-it-tells-us), links to a web-based visualization which unfortunately returns “site can’t be reached.” I sent the article’s author a note to let her know, and in the meantime decided to see if I could pull air quality data and visualize it myself.
+Poking around, I came across an article in DeseretNews titled “Visualizing SLC air pollution in 35 years and what it tells us.” The article, which you can view [here]( https://www.deseret.com/2015/5/7/20564270/visualizing-slc-air-pollution-in-35-years-and-what-it-tells-us), links to a web-based visualization which unfortunately returns “site can’t be reached.” I sent the article’s author a note to let her know, and in the meantime decided to see if I could pull air quality data and visualize it myself.
 
 The EPA makes air quality data readily available to the public via their AirData Quality Monitors web app. Below are all the monitors across the U.S. for the 5 primary pollutants used in evaluating air quality (carbon monoxide, nitrogen dioxide, ozone, PM2.5, and sulfur dioxide):
 
 <center>
 
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/US_monitors.png" alt="EPA air quality monitors in the U.S.">
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/US_monitors_reduced.png" alt="EPA air quality monitors in the U.S.">
 
 </center>
 
@@ -51,7 +53,7 @@ Zooming in on SLC, you can see the valley has 5 monitors:
 
 <center>
 
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/valley_monitors.png" alt="Air quality monitors in Salt Lake City">
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/valley_monitors_reduced.png" alt="Air quality monitors in Salt Lake City">
 
 </center>
 
@@ -61,7 +63,7 @@ The EPA uses data from these monitors to calculate an Air Quality Index (known a
 
 <center>
 
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/AQI_table.png" alt="AQI table: 0-50=good, 51-100=moderate,101-150=unhealthy for sensitive groups, 151-200=unhealthy, 210-300=very unhealthy, hazardous=301-500">
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/AQI_table_reduced.png" alt="AQI table: 0-50=good, 51-100=moderate,101-150=unhealthy for sensitive groups, 151-200=unhealthy, 210-300=very unhealthy, hazardous=301-500">
 
 </center>
 
@@ -630,6 +632,7 @@ Ozone is a
 increase in SLC population requires more energy, more cars, more infrastructure
 
 **Conclusion**:
+
 discuss most promising ways to improve air quality
 
 
@@ -657,386 +660,10 @@ import json
 with open(r'C:\Users\Pat\Desktop\JSON air quality data\active stations\byCounty - active stations.json') as json_data:
     data = json.load(json_data)
 
-data
+print(data)
 ```
 
-
-
-
-    {'Header': [{'status': 'Success',
-       'request_time': '2020-02-21T11:15:27-05:00',
-       'url': 'https://aqs.epa.gov/data/api/monitors/byCounty?email=patrick.debiasse@gmail.com&key=khakihawk63&param=44201&bdate=20090501&edate=20190502&state=49&county=035',
-       'rows': 9}],
-     'Data': [{'state_code': '49',
-       'county_code': '035',
-       'site_number': '0015',
-       'parameter_code': '44201',
-       'poc': 1,
-       'parameter_name': 'Ozone',
-       'open_date': '2014-03-12',
-       'close_date': None,
-       'concurred_exclusions': 'All (2014-03-12 - Present)',
-       'dominant_source': None,
-       'measurement_scale': None,
-       'measurement_scale_def': None,
-       'monitoring_objective': 'GENERAL/BACKGROUND',
-       'last_method_code': '190',
-       'last_method_description': 'Instrumental - UV absorption photometry/UV 2B model 202 and 205',
-       'last_method_begin_date': '2014-03-12',
-       'naaqs_primary_monitor': 'Y',
-       'qa_primary_monitor': None,
-       'monitor_type': 'NON-EPA FEDERAL',
-       'networks': None,
-       'monitoring_agency_code': '1110',
-       'monitoring_agency': 'US Forest Service',
-       'si_id': 100183,
-       'latitude': 40.569,
-       'longitude': -111.659,
-       'datum': 'WGS84',
-       'lat_lon_accuracy': 15.0,
-       'elevation': 2940.0,
-       'probe_height': None,
-       'pl_probe_location': None,
-       'local_site_name': 'Snowbird',
-       'address': 'Snowbird',
-       'state_name': 'Utah',
-       'county_name': 'Salt Lake',
-       'city_name': 'Not in a City',
-       'cbsa_code': '41620',
-       'cbsa_name': 'Salt Lake City, UT',
-       'csa_code': '482',
-       'csa_name': 'Salt Lake City-Provo-Orem, UT',
-       'tribal_code': None,
-       'tribe_name': None},
-      {'state_code': '49',
-       'county_code': '035',
-       'site_number': '4002',
-       'parameter_code': '44201',
-       'poc': 1,
-       'parameter_name': 'Ozone',
-       'open_date': '2019-01-01',
-       'close_date': None,
-       'concurred_exclusions': None,
-       'dominant_source': None,
-       'measurement_scale': None,
-       'measurement_scale_def': None,
-       'monitoring_objective': 'HIGHEST CONCENTRATION',
-       'last_method_code': '087',
-       'last_method_description': 'INSTRUMENTAL - ULTRA VIOLET ABSORPTION',
-       'last_method_begin_date': '2019-01-01',
-       'naaqs_primary_monitor': 'Y',
-       'qa_primary_monitor': None,
-       'monitor_type': 'SPM',
-       'networks': None,
-       'monitoring_agency_code': '1113',
-       'monitoring_agency': 'Utah Department Of Environmental Quality',
-       'si_id': 104474,
-       'latitude': 40.662878,
-       'longitude': -111.901188,
-       'datum': 'NAD83',
-       'lat_lon_accuracy': 1.0,
-       'elevation': 1295.0,
-       'probe_height': None,
-       'pl_probe_location': None,
-       'local_site_name': None,
-       'address': '4951 South Galleria Dr',
-       'state_name': 'Utah',
-       'county_name': 'Salt Lake',
-       'city_name': 'Murray',
-       'cbsa_code': '41620',
-       'cbsa_name': 'Salt Lake City, UT',
-       'csa_code': '482',
-       'csa_name': 'Salt Lake City-Provo-Orem, UT',
-       'tribal_code': None,
-       'tribe_name': None},
-      {'state_code': '49',
-       'county_code': '035',
-       'site_number': '2005',
-       'parameter_code': '44201',
-       'poc': 1,
-       'parameter_name': 'Ozone',
-       'open_date': '2018-04-18',
-       'close_date': None,
-       'concurred_exclusions': None,
-       'dominant_source': None,
-       'measurement_scale': None,
-       'measurement_scale_def': None,
-       'monitoring_objective': 'POPULATION EXPOSURE',
-       'last_method_code': '087',
-       'last_method_description': 'INSTRUMENTAL - ULTRA VIOLET ABSORPTION',
-       'last_method_begin_date': '2018-04-18',
-       'naaqs_primary_monitor': 'Y',
-       'qa_primary_monitor': None,
-       'monitor_type': 'SLAMS',
-       'networks': None,
-       'monitoring_agency_code': '1113',
-       'monitoring_agency': 'Utah Department Of Environmental Quality',
-       'si_id': 104256,
-       'latitude': 40.598056,
-       'longitude': -111.894167,
-       'datum': 'NAD83',
-       'lat_lon_accuracy': 1.0,
-       'elevation': 1.0,
-       'probe_height': None,
-       'pl_probe_location': None,
-       'local_site_name': None,
-       'address': '8449 S. Monroe St.',
-       'state_name': 'Utah',
-       'county_name': 'Salt Lake',
-       'city_name': 'Midvale',
-       'cbsa_code': '41620',
-       'cbsa_name': 'Salt Lake City, UT',
-       'csa_code': '482',
-       'csa_name': 'Salt Lake City-Provo-Orem, UT',
-       'tribal_code': None,
-       'tribe_name': None},
-      {'state_code': '49',
-       'county_code': '035',
-       'site_number': '3010',
-       'parameter_code': '44201',
-       'poc': 1,
-       'parameter_name': 'Ozone',
-       'open_date': '2018-01-01',
-       'close_date': None,
-       'concurred_exclusions': None,
-       'dominant_source': None,
-       'measurement_scale': 'NEIGHBORHOOD',
-       'measurement_scale_def': '500 M TO 4KM',
-       'monitoring_objective': 'POPULATION EXPOSURE',
-       'last_method_code': '087',
-       'last_method_description': 'INSTRUMENTAL - ULTRA VIOLET ABSORPTION',
-       'last_method_begin_date': '2018-01-01',
-       'naaqs_primary_monitor': 'Y',
-       'qa_primary_monitor': None,
-       'monitor_type': 'SLAMS',
-       'networks': None,
-       'monitoring_agency_code': '1113',
-       'monitoring_agency': 'Utah Department Of Environmental Quality',
-       'si_id': 93647,
-       'latitude': 40.78422,
-       'longitude': -111.931,
-       'datum': 'WGS84',
-       'lat_lon_accuracy': 20.0,
-       'elevation': 1286.0,
-       'probe_height': 4.0,
-       'pl_probe_location': 'TOP OF BUILDING',
-       'local_site_name': 'ROSE PARK',
-       'address': '1250 NORTH 1400 WEST',
-       'state_name': 'Utah',
-       'county_name': 'Salt Lake',
-       'city_name': 'Salt Lake City',
-       'cbsa_code': '41620',
-       'cbsa_name': 'Salt Lake City, UT',
-       'csa_code': '482',
-       'csa_name': 'Salt Lake City-Provo-Orem, UT',
-       'tribal_code': None,
-       'tribe_name': None},
-      {'state_code': '49',
-       'county_code': '035',
-       'site_number': '3013',
-       'parameter_code': '44201',
-       'poc': 1,
-       'parameter_name': 'Ozone',
-       'open_date': '2015-01-30',
-       'close_date': None,
-       'concurred_exclusions': None,
-       'dominant_source': None,
-       'measurement_scale': None,
-       'measurement_scale_def': None,
-       'monitoring_objective': 'GENERAL/BACKGROUND',
-       'last_method_code': '087',
-       'last_method_description': 'INSTRUMENTAL - ULTRA VIOLET ABSORPTION',
-       'last_method_begin_date': '2015-01-30',
-       'naaqs_primary_monitor': 'Y',
-       'qa_primary_monitor': None,
-       'monitor_type': 'SLAMS',
-       'networks': None,
-       'monitoring_agency_code': '1113',
-       'monitoring_agency': 'Utah Department Of Environmental Quality',
-       'si_id': 99160,
-       'latitude': 40.496392,
-       'longitude': -112.036298,
-       'datum': 'WGS84',
-       'lat_lon_accuracy': 1.0,
-       'elevation': 1.0,
-       'probe_height': None,
-       'pl_probe_location': None,
-       'local_site_name': None,
-       'address': '14058 Mirabella Dr.',
-       'state_name': 'Utah',
-       'county_name': 'Salt Lake',
-       'city_name': 'Herriman',
-       'cbsa_code': '41620',
-       'cbsa_name': 'Salt Lake City, UT',
-       'csa_code': '482',
-       'csa_name': 'Salt Lake City-Provo-Orem, UT',
-       'tribal_code': None,
-       'tribe_name': None},
-      {'state_code': '49',
-       'county_code': '035',
-       'site_number': '0003',
-       'parameter_code': '44201',
-       'poc': 1,
-       'parameter_name': 'Ozone',
-       'open_date': '1980-12-01',
-       'close_date': '2011-10-02',
-       'concurred_exclusions': None,
-       'dominant_source': 'AREA',
-       'measurement_scale': 'NEIGHBORHOOD',
-       'measurement_scale_def': '500 M TO 4KM',
-       'monitoring_objective': 'POPULATION EXPOSURE',
-       'last_method_code': '087',
-       'last_method_description': 'INSTRUMENTAL - ULTRA VIOLET ABSORPTION',
-       'last_method_begin_date': '2004-07-20',
-       'naaqs_primary_monitor': None,
-       'qa_primary_monitor': None,
-       'monitor_type': 'SLAMS',
-       'networks': None,
-       'monitoring_agency_code': '1113',
-       'monitoring_agency': 'Utah Department Of Environmental Quality',
-       'si_id': 15814,
-       'latitude': 40.646667,
-       'longitude': -111.849722,
-       'datum': 'WGS84',
-       'lat_lon_accuracy': 24.29,
-       'elevation': 1335.0,
-       'probe_height': 4.0,
-       'pl_probe_location': 'TOP OF BUILDING',
-       'local_site_name': 'Cottonwood',
-       'address': '5715 S. 1400 E., SALT LAKE CITY',
-       'state_name': 'Utah',
-       'county_name': 'Salt Lake',
-       'city_name': 'Cottonwood West',
-       'cbsa_code': '41620',
-       'cbsa_name': 'Salt Lake City, UT',
-       'csa_code': '482',
-       'csa_name': 'Salt Lake City-Provo-Orem, UT',
-       'tribal_code': None,
-       'tribe_name': None},
-      {'state_code': '49',
-       'county_code': '035',
-       'site_number': '1007',
-       'parameter_code': '44201',
-       'poc': 1,
-       'parameter_name': 'Ozone',
-       'open_date': '2019-01-01',
-       'close_date': '2019-12-31',
-       'concurred_exclusions': None,
-       'dominant_source': None,
-       'measurement_scale': None,
-       'measurement_scale_def': None,
-       'monitoring_objective': 'GENERAL/BACKGROUND',
-       'last_method_code': '087',
-       'last_method_description': 'INSTRUMENTAL - ULTRA VIOLET ABSORPTION',
-       'last_method_begin_date': '2019-01-01',
-       'naaqs_primary_monitor': None,
-       'qa_primary_monitor': None,
-       'monitor_type': None,
-       'networks': None,
-       'monitoring_agency_code': '1113',
-       'monitoring_agency': 'Utah Department Of Environmental Quality',
-       'si_id': 104476,
-       'latitude': 40.712146,
-       'longitude': -112.111275,
-       'datum': 'NAD83',
-       'lat_lon_accuracy': 1.0,
-       'elevation': 1.0,
-       'probe_height': None,
-       'pl_probe_location': None,
-       'local_site_name': None,
-       'address': '9228 West 2700 South',
-       'state_name': 'Utah',
-       'county_name': 'Salt Lake',
-       'city_name': 'Magna',
-       'cbsa_code': '41620',
-       'cbsa_name': 'Salt Lake City, UT',
-       'csa_code': '482',
-       'csa_name': 'Salt Lake City-Provo-Orem, UT',
-       'tribal_code': None,
-       'tribe_name': None},
-      {'state_code': '49',
-       'county_code': '035',
-       'site_number': '2004',
-       'parameter_code': '44201',
-       'poc': 1,
-       'parameter_name': 'Ozone',
-       'open_date': '1994-05-17',
-       'close_date': '2014-09-30',
-       'concurred_exclusions': None,
-       'dominant_source': 'AREA',
-       'measurement_scale': 'URBAN SCALE',
-       'measurement_scale_def': '4 KM TO 50 KM',
-       'monitoring_objective': 'HIGHEST CONCENTRATION',
-       'last_method_code': '087',
-       'last_method_description': 'INSTRUMENTAL - ULTRA VIOLET ABSORPTION',
-       'last_method_begin_date': '2001-05-01',
-       'naaqs_primary_monitor': None,
-       'qa_primary_monitor': None,
-       'monitor_type': None,
-       'networks': None,
-       'monitoring_agency_code': '1113',
-       'monitoring_agency': 'Utah Department Of Environmental Quality',
-       'si_id': 15839,
-       'latitude': 40.736389,
-       'longitude': -112.210278,
-       'datum': 'WGS84',
-       'lat_lon_accuracy': 24.29,
-       'elevation': 1284.0,
-       'probe_height': 4.0,
-       'pl_probe_location': 'TOP OF BUILDING',
-       'local_site_name': 'UTM COORDINATES AT PROBE LOCATION',
-       'address': '12100 W 1200 S, LAKEPOINT, UTAH',
-       'state_name': 'Utah',
-       'county_name': 'Salt Lake',
-       'city_name': 'Not in a city',
-       'cbsa_code': '41620',
-       'cbsa_name': 'Salt Lake City, UT',
-       'csa_code': '482',
-       'csa_name': 'Salt Lake City-Provo-Orem, UT',
-       'tribal_code': None,
-       'tribe_name': None},
-      {'state_code': '49',
-       'county_code': '035',
-       'site_number': '3006',
-       'parameter_code': '44201',
-       'poc': 1,
-       'parameter_name': 'Ozone',
-       'open_date': '1997-05-01',
-       'close_date': None,
-       'concurred_exclusions': None,
-       'dominant_source': 'AREA',
-       'measurement_scale': 'NEIGHBORHOOD',
-       'measurement_scale_def': '500 M TO 4KM',
-       'monitoring_objective': 'UNKNOWN',
-       'last_method_code': '087',
-       'last_method_description': 'INSTRUMENTAL - ULTRA VIOLET ABSORPTION',
-       'last_method_begin_date': '2003-07-23',
-       'naaqs_primary_monitor': 'Y',
-       'qa_primary_monitor': None,
-       'monitor_type': 'SLAMS',
-       'networks': 'NCORE',
-       'monitoring_agency_code': '1113',
-       'monitoring_agency': 'Utah Department Of Environmental Quality',
-       'si_id': 15845,
-       'latitude': 40.736389,
-       'longitude': -111.872222,
-       'datum': 'WGS84',
-       'lat_lon_accuracy': 24.29,
-       'elevation': 1306.0,
-       'probe_height': 4.0,
-       'pl_probe_location': 'TOP OF BUILDING',
-       'local_site_name': 'Hawthorne',
-       'address': '1675 SOUTH 600 EAST, SALT LAKE CITY',
-       'state_name': 'Utah',
-       'county_name': 'Salt Lake',
-       'city_name': 'Salt Lake City',
-       'cbsa_code': '41620',
-       'cbsa_name': 'Salt Lake City, UT',
-       'csa_code': '482',
-       'csa_name': 'Salt Lake City-Provo-Orem, UT',
-       'tribal_code': None,
-       'tribe_name': None}]}
-
+    {'Header': [{'status': 'Success', 'request_time': '2020-02-21T11:15:27-05:00', 'url': 'https://aqs.epa.gov/data/api/monitors/byCounty?email=patrick.debiasse@gmail.com&key=khakihawk63&param=44201&bdate=20090501&edate=20190502&state=49&county=035', 'rows': 9}], 'Data': [{'state_code': '49', 'county_code': '035', 'site_number': '0015', 'parameter_code': '44201', 'poc': 1, 'parameter_name': 'Ozone', 'open_date': '2014-03-12', 'close_date': None, 'concurred_exclusions': 'All (2014-03-12 - Present)', 'dominant_source': None, 'measurement_scale': None, 'measurement_scale_def': None, 'monitoring_objective': 'GENERAL/BACKGROUND', 'last_method_code': '190', 'last_method_description': 'Instrumental - UV absorption photometry/UV 2B model 202 and 205', 'last_method_begin_date': '2014-03-12', 'naaqs_primary_monitor': 'Y', 'qa_primary_monitor': None, 'monitor_type': 'NON-EPA FEDERAL', 'networks': None, 'monitoring_agency_code': '1110', 'monitoring_agency': 'US Forest Service', 'si_id': 100183, 'latitude': 40.569, 'longitude': -111.659, 'datum': 'WGS84', 'lat_lon_accuracy': 15.0, 'elevation': 2940.0, 'probe_height': None, 'pl_probe_location': None, 'local_site_name': 'Snowbird', 'address': 'Snowbird', 'state_name': 'Utah', 'county_name': 'Salt Lake', 'city_name': 'Not in a City', 'cbsa_code': '41620', 'cbsa_name': 'Salt Lake City, UT', 'csa_code': '482', 'csa_name': 'Salt Lake City-Provo-Orem, UT', 'tribal_code': None, 'tribe_name': None}, {'state_code': '49', 'county_code': '035', 'site_number': '4002', 'parameter_code': '44201', 'poc': 1, 'parameter_name': 'Ozone', 'open_date': '2019-01-01', 'close_date': None, 'concurred_exclusions': None, 'dominant_source': None, 'measurement_scale': None, 'measurement_scale_def': None, 'monitoring_objective': 'HIGHEST CONCENTRATION', 'last_method_code': '087', 'last_method_description': 'INSTRUMENTAL - ULTRA VIOLET ABSORPTION', 'last_method_begin_date': '2019-01-01', 'naaqs_primary_monitor': 'Y', 'qa_primary_monitor': None, 'monitor_type': 'SPM', 'networks': None, 'monitoring_agency_code': '1113', 'monitoring_agency': 'Utah Department Of Environmental Quality', 'si_id': 104474, 'latitude': 40.662878, 'longitude': -111.901188, 'datum': 'NAD83', 'lat_lon_accuracy': 1.0, 'elevation': 1295.0, 'probe_height': None, 'pl_probe_location': None, 'local_site_name': None, 'address': '4951 South Galleria Dr', 'state_name': 'Utah', 'county_name': 'Salt Lake', 'city_name': 'Murray', 'cbsa_code': '41620', 'cbsa_name': 'Salt Lake City, UT', 'csa_code': '482', 'csa_name': 'Salt Lake City-Provo-Orem, UT', 'tribal_code': None, 'tribe_name': None}, {'state_code': '49', 'county_code': '035', 'site_number': '2005', 'parameter_code': '44201', 'poc': 1, 'parameter_name': 'Ozone', 'open_date': '2018-04-18', 'close_date': None, 'concurred_exclusions': None, 'dominant_source': None, 'measurement_scale': None, 'measurement_scale_def': None, 'monitoring_objective': 'POPULATION EXPOSURE', 'last_method_code': '087', 'last_method_description': 'INSTRUMENTAL - ULTRA VIOLET ABSORPTION', 'last_method_begin_date': '2018-04-18', 'naaqs_primary_monitor': 'Y', 'qa_primary_monitor': None, 'monitor_type': 'SLAMS', 'networks': None, 'monitoring_agency_code': '1113', 'monitoring_agency': 'Utah Department Of Environmental Quality', 'si_id': 104256, 'latitude': 40.598056, 'longitude': -111.894167, 'datum': 'NAD83', 'lat_lon_accuracy': 1.0, 'elevation': 1.0, 'probe_height': None, 'pl_probe_location': None, 'local_site_name': None, 'address': '8449 S. Monroe St.', 'state_name': 'Utah', 'county_name': 'Salt Lake', 'city_name': 'Midvale', 'cbsa_code': '41620', 'cbsa_name': 'Salt Lake City, UT', 'csa_code': '482', 'csa_name': 'Salt Lake City-Provo-Orem, UT', 'tribal_code': None, 'tribe_name': None}, {'state_code': '49', 'county_code': '035', 'site_number': '3010', 'parameter_code': '44201', 'poc': 1, 'parameter_name': 'Ozone', 'open_date': '2018-01-01', 'close_date': None, 'concurred_exclusions': None, 'dominant_source': None, 'measurement_scale': 'NEIGHBORHOOD', 'measurement_scale_def': '500 M TO 4KM', 'monitoring_objective': 'POPULATION EXPOSURE', 'last_method_code': '087', 'last_method_description': 'INSTRUMENTAL - ULTRA VIOLET ABSORPTION', 'last_method_begin_date': '2018-01-01', 'naaqs_primary_monitor': 'Y', 'qa_primary_monitor': None, 'monitor_type': 'SLAMS', 'networks': None, 'monitoring_agency_code': '1113', 'monitoring_agency': 'Utah Department Of Environmental Quality', 'si_id': 93647, 'latitude': 40.78422, 'longitude': -111.931, 'datum': 'WGS84', 'lat_lon_accuracy': 20.0, 'elevation': 1286.0, 'probe_height': 4.0, 'pl_probe_location': 'TOP OF BUILDING', 'local_site_name': 'ROSE PARK', 'address': '1250 NORTH 1400 WEST', 'state_name': 'Utah', 'county_name': 'Salt Lake', 'city_name': 'Salt Lake City', 'cbsa_code': '41620', 'cbsa_name': 'Salt Lake City, UT', 'csa_code': '482', 'csa_name': 'Salt Lake City-Provo-Orem, UT', 'tribal_code': None, 'tribe_name': None}, {'state_code': '49', 'county_code': '035', 'site_number': '3013', 'parameter_code': '44201', 'poc': 1, 'parameter_name': 'Ozone', 'open_date': '2015-01-30', 'close_date': None, 'concurred_exclusions': None, 'dominant_source': None, 'measurement_scale': None, 'measurement_scale_def': None, 'monitoring_objective': 'GENERAL/BACKGROUND', 'last_method_code': '087', 'last_method_description': 'INSTRUMENTAL - ULTRA VIOLET ABSORPTION', 'last_method_begin_date': '2015-01-30', 'naaqs_primary_monitor': 'Y', 'qa_primary_monitor': None, 'monitor_type': 'SLAMS', 'networks': None, 'monitoring_agency_code': '1113', 'monitoring_agency': 'Utah Department Of Environmental Quality', 'si_id': 99160, 'latitude': 40.496392, 'longitude': -112.036298, 'datum': 'WGS84', 'lat_lon_accuracy': 1.0, 'elevation': 1.0, 'probe_height': None, 'pl_probe_location': None, 'local_site_name': None, 'address': '14058 Mirabella Dr.', 'state_name': 'Utah', 'county_name': 'Salt Lake', 'city_name': 'Herriman', 'cbsa_code': '41620', 'cbsa_name': 'Salt Lake City, UT', 'csa_code': '482', 'csa_name': 'Salt Lake City-Provo-Orem, UT', 'tribal_code': None, 'tribe_name': None}, {'state_code': '49', 'county_code': '035', 'site_number': '0003', 'parameter_code': '44201', 'poc': 1, 'parameter_name': 'Ozone', 'open_date': '1980-12-01', 'close_date': '2011-10-02', 'concurred_exclusions': None, 'dominant_source': 'AREA', 'measurement_scale': 'NEIGHBORHOOD', 'measurement_scale_def': '500 M TO 4KM', 'monitoring_objective': 'POPULATION EXPOSURE', 'last_method_code': '087', 'last_method_description': 'INSTRUMENTAL - ULTRA VIOLET ABSORPTION', 'last_method_begin_date': '2004-07-20', 'naaqs_primary_monitor': None, 'qa_primary_monitor': None, 'monitor_type': 'SLAMS', 'networks': None, 'monitoring_agency_code': '1113', 'monitoring_agency': 'Utah Department Of Environmental Quality', 'si_id': 15814, 'latitude': 40.646667, 'longitude': -111.849722, 'datum': 'WGS84', 'lat_lon_accuracy': 24.29, 'elevation': 1335.0, 'probe_height': 4.0, 'pl_probe_location': 'TOP OF BUILDING', 'local_site_name': 'Cottonwood', 'address': '5715 S. 1400 E., SALT LAKE CITY', 'state_name': 'Utah', 'county_name': 'Salt Lake', 'city_name': 'Cottonwood West', 'cbsa_code': '41620', 'cbsa_name': 'Salt Lake City, UT', 'csa_code': '482', 'csa_name': 'Salt Lake City-Provo-Orem, UT', 'tribal_code': None, 'tribe_name': None}, {'state_code': '49', 'county_code': '035', 'site_number': '1007', 'parameter_code': '44201', 'poc': 1, 'parameter_name': 'Ozone', 'open_date': '2019-01-01', 'close_date': '2019-12-31', 'concurred_exclusions': None, 'dominant_source': None, 'measurement_scale': None, 'measurement_scale_def': None, 'monitoring_objective': 'GENERAL/BACKGROUND', 'last_method_code': '087', 'last_method_description': 'INSTRUMENTAL - ULTRA VIOLET ABSORPTION', 'last_method_begin_date': '2019-01-01', 'naaqs_primary_monitor': None, 'qa_primary_monitor': None, 'monitor_type': None, 'networks': None, 'monitoring_agency_code': '1113', 'monitoring_agency': 'Utah Department Of Environmental Quality', 'si_id': 104476, 'latitude': 40.712146, 'longitude': -112.111275, 'datum': 'NAD83', 'lat_lon_accuracy': 1.0, 'elevation': 1.0, 'probe_height': None, 'pl_probe_location': None, 'local_site_name': None, 'address': '9228 West 2700 South', 'state_name': 'Utah', 'county_name': 'Salt Lake', 'city_name': 'Magna', 'cbsa_code': '41620', 'cbsa_name': 'Salt Lake City, UT', 'csa_code': '482', 'csa_name': 'Salt Lake City-Provo-Orem, UT', 'tribal_code': None, 'tribe_name': None}, {'state_code': '49', 'county_code': '035', 'site_number': '2004', 'parameter_code': '44201', 'poc': 1, 'parameter_name': 'Ozone', 'open_date': '1994-05-17', 'close_date': '2014-09-30', 'concurred_exclusions': None, 'dominant_source': 'AREA', 'measurement_scale': 'URBAN SCALE', 'measurement_scale_def': '4 KM TO 50 KM', 'monitoring_objective': 'HIGHEST CONCENTRATION', 'last_method_code': '087', 'last_method_description': 'INSTRUMENTAL - ULTRA VIOLET ABSORPTION', 'last_method_begin_date': '2001-05-01', 'naaqs_primary_monitor': None, 'qa_primary_monitor': None, 'monitor_type': None, 'networks': None, 'monitoring_agency_code': '1113', 'monitoring_agency': 'Utah Department Of Environmental Quality', 'si_id': 15839, 'latitude': 40.736389, 'longitude': -112.210278, 'datum': 'WGS84', 'lat_lon_accuracy': 24.29, 'elevation': 1284.0, 'probe_height': 4.0, 'pl_probe_location': 'TOP OF BUILDING', 'local_site_name': 'UTM COORDINATES AT PROBE LOCATION', 'address': '12100 W 1200 S, LAKEPOINT, UTAH', 'state_name': 'Utah', 'county_name': 'Salt Lake', 'city_name': 'Not in a city', 'cbsa_code': '41620', 'cbsa_name': 'Salt Lake City, UT', 'csa_code': '482', 'csa_name': 'Salt Lake City-Provo-Orem, UT', 'tribal_code': None, 'tribe_name': None}, {'state_code': '49', 'county_code': '035', 'site_number': '3006', 'parameter_code': '44201', 'poc': 1, 'parameter_name': 'Ozone', 'open_date': '1997-05-01', 'close_date': None, 'concurred_exclusions': None, 'dominant_source': 'AREA', 'measurement_scale': 'NEIGHBORHOOD', 'measurement_scale_def': '500 M TO 4KM', 'monitoring_objective': 'UNKNOWN', 'last_method_code': '087', 'last_method_description': 'INSTRUMENTAL - ULTRA VIOLET ABSORPTION', 'last_method_begin_date': '2003-07-23', 'naaqs_primary_monitor': 'Y', 'qa_primary_monitor': None, 'monitor_type': 'SLAMS', 'networks': 'NCORE', 'monitoring_agency_code': '1113', 'monitoring_agency': 'Utah Department Of Environmental Quality', 'si_id': 15845, 'latitude': 40.736389, 'longitude': -111.872222, 'datum': 'WGS84', 'lat_lon_accuracy': 24.29, 'elevation': 1306.0, 'probe_height': 4.0, 'pl_probe_location': 'TOP OF BUILDING', 'local_site_name': 'Hawthorne', 'address': '1675 SOUTH 600 EAST, SALT LAKE CITY', 'state_name': 'Utah', 'county_name': 'Salt Lake', 'city_name': 'Salt Lake City', 'cbsa_code': '41620', 'cbsa_name': 'Salt Lake City, UT', 'csa_code': '482', 'csa_name': 'Salt Lake City-Provo-Orem, UT', 'tribal_code': None, 'tribe_name': None}]}
 
 
 The JSON data was formatted with 2 dictionaries ('Header' and 'Data'), each of which contained a list of key-value pairs. I converted the JSON data within the 'Data' dictionary into a pandas dataframe so it'd be easier to read:
@@ -1047,7 +674,8 @@ from pandas.io.json import json_normalize
 
 df = json_normalize(data['Data'])
 
-df
+df_2 = df[df['close_date'] == 'None']
+df_2
 ```
 
 
@@ -1095,225 +723,9 @@ df
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>0</td>
-      <td>49</td>
-      <td>035</td>
-      <td>0015</td>
-      <td>44201</td>
-      <td>1</td>
-      <td>Ozone</td>
-      <td>2014-03-12</td>
-      <td>None</td>
-      <td>All (2014-03-12 - Present)</td>
-      <td>None</td>
-      <td>...</td>
-      <td>Snowbird</td>
-      <td>Utah</td>
-      <td>Salt Lake</td>
-      <td>Not in a City</td>
-      <td>41620</td>
-      <td>Salt Lake City, UT</td>
-      <td>482</td>
-      <td>Salt Lake City-Provo-Orem, UT</td>
-      <td>None</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>49</td>
-      <td>035</td>
-      <td>4002</td>
-      <td>44201</td>
-      <td>1</td>
-      <td>Ozone</td>
-      <td>2019-01-01</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>...</td>
-      <td>4951 South Galleria Dr</td>
-      <td>Utah</td>
-      <td>Salt Lake</td>
-      <td>Murray</td>
-      <td>41620</td>
-      <td>Salt Lake City, UT</td>
-      <td>482</td>
-      <td>Salt Lake City-Provo-Orem, UT</td>
-      <td>None</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>49</td>
-      <td>035</td>
-      <td>2005</td>
-      <td>44201</td>
-      <td>1</td>
-      <td>Ozone</td>
-      <td>2018-04-18</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>...</td>
-      <td>8449 S. Monroe St.</td>
-      <td>Utah</td>
-      <td>Salt Lake</td>
-      <td>Midvale</td>
-      <td>41620</td>
-      <td>Salt Lake City, UT</td>
-      <td>482</td>
-      <td>Salt Lake City-Provo-Orem, UT</td>
-      <td>None</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>49</td>
-      <td>035</td>
-      <td>3010</td>
-      <td>44201</td>
-      <td>1</td>
-      <td>Ozone</td>
-      <td>2018-01-01</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>...</td>
-      <td>1250 NORTH 1400 WEST</td>
-      <td>Utah</td>
-      <td>Salt Lake</td>
-      <td>Salt Lake City</td>
-      <td>41620</td>
-      <td>Salt Lake City, UT</td>
-      <td>482</td>
-      <td>Salt Lake City-Provo-Orem, UT</td>
-      <td>None</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>49</td>
-      <td>035</td>
-      <td>3013</td>
-      <td>44201</td>
-      <td>1</td>
-      <td>Ozone</td>
-      <td>2015-01-30</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>...</td>
-      <td>14058 Mirabella Dr.</td>
-      <td>Utah</td>
-      <td>Salt Lake</td>
-      <td>Herriman</td>
-      <td>41620</td>
-      <td>Salt Lake City, UT</td>
-      <td>482</td>
-      <td>Salt Lake City-Provo-Orem, UT</td>
-      <td>None</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>49</td>
-      <td>035</td>
-      <td>0003</td>
-      <td>44201</td>
-      <td>1</td>
-      <td>Ozone</td>
-      <td>1980-12-01</td>
-      <td>2011-10-02</td>
-      <td>None</td>
-      <td>AREA</td>
-      <td>...</td>
-      <td>5715 S. 1400 E., SALT LAKE CITY</td>
-      <td>Utah</td>
-      <td>Salt Lake</td>
-      <td>Cottonwood West</td>
-      <td>41620</td>
-      <td>Salt Lake City, UT</td>
-      <td>482</td>
-      <td>Salt Lake City-Provo-Orem, UT</td>
-      <td>None</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>49</td>
-      <td>035</td>
-      <td>1007</td>
-      <td>44201</td>
-      <td>1</td>
-      <td>Ozone</td>
-      <td>2019-01-01</td>
-      <td>2019-12-31</td>
-      <td>None</td>
-      <td>None</td>
-      <td>...</td>
-      <td>9228 West 2700 South</td>
-      <td>Utah</td>
-      <td>Salt Lake</td>
-      <td>Magna</td>
-      <td>41620</td>
-      <td>Salt Lake City, UT</td>
-      <td>482</td>
-      <td>Salt Lake City-Provo-Orem, UT</td>
-      <td>None</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>49</td>
-      <td>035</td>
-      <td>2004</td>
-      <td>44201</td>
-      <td>1</td>
-      <td>Ozone</td>
-      <td>1994-05-17</td>
-      <td>2014-09-30</td>
-      <td>None</td>
-      <td>AREA</td>
-      <td>...</td>
-      <td>12100 W 1200 S, LAKEPOINT, UTAH</td>
-      <td>Utah</td>
-      <td>Salt Lake</td>
-      <td>Not in a city</td>
-      <td>41620</td>
-      <td>Salt Lake City, UT</td>
-      <td>482</td>
-      <td>Salt Lake City-Provo-Orem, UT</td>
-      <td>None</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <td>8</td>
-      <td>49</td>
-      <td>035</td>
-      <td>3006</td>
-      <td>44201</td>
-      <td>1</td>
-      <td>Ozone</td>
-      <td>1997-05-01</td>
-      <td>None</td>
-      <td>None</td>
-      <td>AREA</td>
-      <td>...</td>
-      <td>1675 SOUTH 600 EAST, SALT LAKE CITY</td>
-      <td>Utah</td>
-      <td>Salt Lake</td>
-      <td>Salt Lake City</td>
-      <td>41620</td>
-      <td>Salt Lake City, UT</td>
-      <td>482</td>
-      <td>Salt Lake City-Provo-Orem, UT</td>
-      <td>None</td>
-      <td>None</td>
-    </tr>
   </tbody>
 </table>
-<p>9 rows × 41 columns</p>
+<p>0 rows × 41 columns</p>
 </div>
 
 
@@ -1627,4 +1039,4 @@ df['pollutant_standard'].unique()
 
 A few revisions over the years!
 
-To help raise public awareness of air quality, I think placing air quality monitors at street level downtown and having live, color-coded displays announcing current AQI (and perhaps a 7-day plotted history) could be of use. Something near Pioneer Park could attract a lot of eyeballs.  
+To help raise public awareness of air quality, I think placing air quality monitors at street level downtown and having live, color-coded displays announcing current AQI (and perhaps a 7-day plotted history) could be of use. Something near Pioneer Park could attract a lot of eyeballs. Having a Tesla sales booth stationed next to it while the Farmer's market is going on might result in a few sales..
