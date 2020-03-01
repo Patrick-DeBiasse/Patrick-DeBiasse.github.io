@@ -27,7 +27,7 @@ Household fish aren’t the only ones subjected to such conditions! Many of us l
 
 <center>
 
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/us_air_compressed.jpg " alt="U.S. map of PM2.5 air pollution", class="full">
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/us_air_2.jpg " alt="U.S. map of PM2.5 air pollution", class="full">
 
 </center>
 
