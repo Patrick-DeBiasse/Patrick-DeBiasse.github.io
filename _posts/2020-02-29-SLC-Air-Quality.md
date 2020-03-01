@@ -17,7 +17,7 @@ As a child, I remember watching my dad clean the fish tank. This was a bit of a 
 
 <center>
 
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/dirty_tank_compressed.JPG" alt="dirty fish tank">
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/dirty_tank_compressed.jpg" alt="dirty fish tank">
 
 </center>
 
@@ -27,7 +27,7 @@ Household fish aren’t the only ones subjected to such conditions! Many of us l
 
 <center>
 
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/us_air_2.JPG" alt="U.S. map of PM2.5 air pollution">
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/us_air_2.jpg" alt="U.S. map of PM2.5 air pollution">
 
 </center>
 
