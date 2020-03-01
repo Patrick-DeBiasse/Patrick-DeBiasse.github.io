@@ -488,11 +488,11 @@ plt.show()
 
 <center>
 
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/test_6.png" alt="Plot of AQI by year from 1980 to 2018">
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/test_6.PNG" alt="Plot of AQI by year from 1980 to 2018">
 
 </center>
 
-<p style="text-align: center; font-style: italic;"> Plot of SLC's Daily AQI from 1980 to 2018. </p>
+<p style="text-align: center; font-style: italic;"> zPlot of SLC's Daily AQI from 1980 to 2018. </p>
 
 From 1980 to 2018, there has been a fairly dramatic shift towards improved air quality, as signified by an increase in "Good" and "Moderate" days and a decrease in "unhealthy" ones. 1982 would've been an especially good year to hold your breath.
 
