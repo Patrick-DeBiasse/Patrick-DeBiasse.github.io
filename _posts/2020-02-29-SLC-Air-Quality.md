@@ -23,7 +23,7 @@ As a child, I remember watching my dad clean the fish tank. This was a bit of a 
 
 <p style="text-align: center; font-style: italic;"> Not the fish tank of my childhood, but similar. </p>
 
-Household fish aren’t the only ones subjected to such conditions! Many of us live in areas with dirty air. Here’s a map of PM2.5 pollution (tiny particles that damage our lungs) in the U.S.:
+Household fish aren’t the only ones subjected to such conditions. Many of us live in areas with dirty air. Here’s a map of PM2.5 pollution (tiny particles that damage our lungs) in the U.S.:
 
 <center>
 
@@ -31,13 +31,13 @@ Household fish aren’t the only ones subjected to such conditions! Many of us l
 
 </center>
 
-<p style="text-align: center; font-style: italic;"> PM2.5 air pollution across the U.S. </p>
+<p style="text-align: center; font-style: italic;"> PM2.5 pollution across the U.S. </p>
 
 The blotch of red towards the middle-left of the country is Salt Lake City, where due to the perimeter of mountains surrounding the inhabited valley floor (forming a bowl-like geometry), nasty air can get trapped and accumulate. This is especially bad in the winter, when a blanket of warm air forms a “lid” on top of the colder valley floor – this is called the *winter inversion*, which is a spooky name.
 
 I had heard about this prior to moving to SLC. But this winter I really haven’t seen a cause for concern. Admittedly, I don’t check air quality often, but if it was really that bad I think I’d have heard? That all said, I was curious to see what the air quality in SLC is today and how it has changed over time.
 
-Poking around, I came across an article in DeseretNews titled “Visualizing SLC air pollution in 35 years and what it tells us.” The article, ([here])( https://www.deseret.com/2015/5/7/20564270/visualizing-slc-air-pollution-in-35-years-and-what-it-tells-us), links to a web-based visualization which unfortunately returns “site can’t be reached.” I sent the article’s author a note to let her know, and in the meantime decided to see if I could pull air quality data and visualize it myself.
+Poking around, I came across an article in DeseretNews titled “Visualizing SLC air pollution in 35 years and what it tells us.” The [article]( https://www.deseret.com/2015/5/7/20564270/visualizing-slc-air-pollution-in-35-years-and-what-it-tells-us), links to a web-based visualization which unfortunately returns “site can’t be reached.” I sent the article’s author a note to let her know, and in the meantime decided to see if I could pull air quality data and visualize it myself.
 
 The EPA makes air quality data available to the public via their AirData Quality Monitors web app. Below are all the monitors across the U.S. for the 5 primary pollutants used in evaluating air quality (carbon monoxide, nitrogen dioxide, ozone, PM2.5, and sulfur dioxide):
 
@@ -49,7 +49,7 @@ The EPA makes air quality data available to the public via their AirData Quality
 
 <p style="text-align: center; font-style: italic;"> Air quality monitors in the U.S. </p>
 
-Zooming in on SLC, you can see the valley has 5 monitors:
+Zooming in on SLC, we can see the valley has 5 active monitors:
 
 <center>
 
@@ -59,11 +59,11 @@ Zooming in on SLC, you can see the valley has 5 monitors:
 
 <p style="text-align: center; font-style: italic;"> Air quality monitors in Salt Lake City. </p>
 
-The EPA uses data from these monitors to calculate an Air Quality Index (known as AQI), which has six categories:
+The EPA uses data from these monitors to calculate the Air Quality Index (known as AQI):
 
 <center>
 
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/AQI_table_reduced_2.png" alt="AQI table: 0-50=good, 51-100=moderate,101-150=unhealthy for sensitive groups, 151-200=unhealthy, 210-300=very unhealthy, hazardous=301-500">
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/AQI_table_3_reduced.png" alt="AQI table: 0-50=good, 51-100=moderate,101-150=unhealthy for sensitive groups, 151-200=unhealthy, 210-300=very unhealthy, hazardous=301-500">
 
 </center>
 
@@ -71,6 +71,8 @@ The EPA uses data from these monitors to calculate an Air Quality Index (known a
 
 
 ((improve from below this))
+AQI is calculated based on the levels of the 5 major air pollutants
+
 From the EPA:
 "EPA calculates the AQI for five major air pollutants regulated by the Clean Air Act:
 
@@ -80,7 +82,27 @@ From the EPA:
 - sulfur dioxide
 - nitrogen dioxide
 
-For each of these pollutants, EPA has established national air quality standards to protect public health .Ground-level ozone and airborne particles are the two pollutants that pose the greatest threat to human health in this country."
+
+These raw measurements are converted into a separate AQI
+value for each pollutant (ground-level ozone, particle pollution, carbon monoxide, and sulfur dioxide) using standard
+formulas developed by EPA. The highest of these AQI values
+is reported as the AQI value for that day.2
+In large cities (more than 350,000 people), state and local
+agencies are required to report the AQI to the public daily.
+Many smaller communities also report the AQI as a public
+health service.
+When the AQI is above 100, agencies must also report
+which groups, such as children or people with asthma or
+heart disease, may be sensitive to that pollutant. If two or
+more pollutants have AQI values above 100 on a given day,
+agencies must report all the groups that are sensitive to those
+pollutants. For example, if a community’s AQI is 130 for
+ozone and 101 for particle pollution, the AQI value for that
+day would be announced as 130 for ozone. The announcements would note that particle pollution levels were also
+high and would alert groups sensitive to ozone or particle
+pollution about how to protect their health.
+
+
 
 **Analysis**:
 
@@ -628,7 +650,9 @@ ax.legend(loc ='upper right',frameon=True, bbox_to_anchor=(1.4, 0.7))
 ![png](output_12_1.png)
 
 
-Sulfur dioxide was the dominant pollutant from 1980 to 1995, at which point ozone surged. Today ozone is the biggeset contributor to poor air quality. PM2.5 has also had a concerning rise since 2000.
+The plot above shows which pollutant is the primary contributor to poor air quality per day (which has the highest AQI), from 1980 to 2018.
+
+Sulfur dioxide was the dominant pollutant from 1980 to 1995, at which point ozone surged. Today ozone is the biggeset contributor to poor air quality, but PM2.5 has also had a concerning rise since 2000.
 
 What causes these pollutants? How harmful are they? How can we get cleaner air in the valley?
 
