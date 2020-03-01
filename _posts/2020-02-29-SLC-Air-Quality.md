@@ -17,7 +17,7 @@ As a child, I remember watching my dad clean the fish tank. This was a bit of a 
 
 <center>
 
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/dirty_tank_compressed.jpg " alt="dirty fish tank">
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/dirty_tank_compressed.JPG" alt="dirty fish tank">
 
 </center>
 
@@ -27,7 +27,7 @@ Household fish aren’t the only ones subjected to such conditions! Many of us l
 
 <center>
 
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/us_air_2.jpg" alt="U.S. map of PM2.5 air pollution", class="full">
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/us_air_2.JPG" alt="U.S. map of PM2.5 air pollution">
 
 </center>
 
@@ -37,7 +37,7 @@ The blotch of red towards the middle-left of the country is Salt Lake City, wher
 
 I had heard about this prior to moving to SLC. But this winter I really haven’t seen a cause for concern. Admittedly, I don’t check air quality often, but if it was really that bad I think I’d have heard? That all said, I was curious to see what the air quality in SLC is today and how it has changed over time.
 
-Poking around, I came across an article in DeseretNews titled “Visualizing SLC air pollution in 35 years and what it tells us.” The [article](https://www.deseret.com/2015/5/7/20564270/visualizing-slc-air-pollution-in-35-years-and-what-it-tells-us), links to a web-based visualization which unfortunately returns “site can’t be reached.” I sent the article’s author a note to let her know, and in the meantime decided to see if I could pull air quality data and visualize it myself.
+Poking around, I came across an article in DeseretNews titled “Visualizing SLC air pollution in 35 years and what it tells us.” The article, ([here])( https://www.deseret.com/2015/5/7/20564270/visualizing-slc-air-pollution-in-35-years-and-what-it-tells-us), links to a web-based visualization which unfortunately returns “site can’t be reached.” I sent the article’s author a note to let her know, and in the meantime decided to see if I could pull air quality data and visualize it myself.
 
 The EPA makes air quality data available to the public via their AirData Quality Monitors web app. Below are all the monitors across the U.S. for the 5 primary pollutants used in evaluating air quality (carbon monoxide, nitrogen dioxide, ozone, PM2.5, and sulfur dioxide):
 
@@ -492,7 +492,7 @@ plt.show()
 
 </center>
 
-<p style="text-align: center; font-style: italic;"> zPlot of SLC's Daily AQI from 1980 to 2018. </p>
+<p style="text-align: center; font-style: italic;"> Plot of SLC's Daily AQI from 1980 to 2018. </p>
 
 From 1980 to 2018, there has been a fairly dramatic shift towards improved air quality, as signified by an increase in "Good" and "Moderate" days and a decrease in "unhealthy" ones. 1982 would've been an especially good year to hold your breath.
 
