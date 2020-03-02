@@ -551,8 +551,8 @@ import matplotlib.pyplot as plt
 fig = df_AQI.plot.area(x='Year', color = ['green', 'yellow','orange', 'red', 'purple', 'black'])
 fig.legend(loc ='upper right',frameon=True, bbox_to_anchor=(1.75, 0.7))
 plt.ylabel('Days')
-#plt.savefig(r'C:\Users\Pat\Desktop\Patrick-DeBiasse.github.io\assets\images\SLC_Air_Quality\test_4.svg', format='svg', dpi=1200, bbox_inches='tight')
-plt.show()
+plt.savefig(r'C:\Users\Pat\Desktop\Patrick-DeBiasse.github.io\assets\images\SLC_Air_Quality\rating_by_year.png', bbox_inches='tight')
+#plt.show()
 ```
 
 
@@ -561,7 +561,7 @@ plt.show()
 
 <center>
 
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/test_6.PNG" alt="Plot of AQI by year from 1980 to 2018">
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/rating_by_year.png" alt="Plot of AQI by year from 1980 to 2018">
 
 </center>
 
@@ -577,19 +577,13 @@ df_AQI_recent = df_AQI[df_AQI.Year > 2013]
 
 fig = df_AQI_recent.plot.area(x='Year', color = ['green', 'yellow','orange', 'red', 'purple', 'black'])
 fig.legend(loc ='upper right',frameon=True, bbox_to_anchor=(1.75, 0.7))
+plt.xticks([2014, 2015, 2016, 2017, 2018])
 plt.ylabel('Days')
-#plt.savefig(r'C:\Users\Pat\Desktop\Patrick-DeBiasse.github.io\assets\images\SLC_Air_Quality\recent_AQI.svg', format='svg', dpi=1200, bbox_inches='tight')
+plt.savefig(r'C:\Users\Pat\Desktop\Patrick-DeBiasse.github.io\assets\images\SLC_Air_Quality\recent_AQI.png', bbox_inches='tight')
 ```
 
 
-
-
-    Text(0, 0.5, 'Days')
-
-
-
-
-![png](output_10_1.png)
+![png](output_10_0.png)
 
 
 <center>
@@ -649,7 +643,7 @@ The plot above shows which pollutant is the primary contributor to poor air qual
 
 Sulfur dioxide was the dominant pollutant from 1980 to 1995, at which point SO2 was greatly reduced and ozone surged. Today ozone is the biggeset contributor to poor air quality, and PM2.5 has also had a concerning rise since 2000.
 
-What causes these pollutants? How harmful are they? How can we get cleaner air in the valley?
+What causes these pollutants? How harmful are they? Why are they increasing? How can we get cleaner air in the valley?
 
 **Discussion**:
 
