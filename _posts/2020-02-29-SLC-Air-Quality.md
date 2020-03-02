@@ -588,7 +588,7 @@ plt.savefig(r'C:\Users\Pat\Desktop\Patrick-DeBiasse.github.io\assets\images\SLC_
 
 <center>
 
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/recent_AQI.png" alt="Plot of AQI by year from 2014 to 2018">
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/recent_AQI_2.png" alt="Plot of AQI by year from 2014 to 2018">
 
 </center>
 
