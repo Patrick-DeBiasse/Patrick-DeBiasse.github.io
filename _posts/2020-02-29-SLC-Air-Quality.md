@@ -9,7 +9,7 @@ excerpt: "Using Python to collect and explore EPA air quality data."
 
 **Abstract**:
 
-Here I investigate how Salt Lake City's air quality has changed over time by downloading 38 years worth of data from the EPA, segmenting this data into various dataframe with pandas, then exploring things visually with matplotlib.
+Here I investigate how Salt Lake City's air quality has changed over time by downloading 38 years worth of data from the EPA, segmenting it into various dataframes with pandas, then exploring things visually with matplotlib.
 
 **Intro**:
 
@@ -645,25 +645,4 @@ Sulfur dioxide was the dominant pollutant from 1980 to 1995, at which point SO2 
 
 What causes these pollutants? How harmful are they? Why are they increasing? How can we get cleaner air in the valley?
 
-**Discussion**:
-
-1) What causes these pollutants?
-Ozone is a
-
-increase in SLC population requires more energy, more cars, more infrastructure
-
-**Conclusion**:
-
-discuss most promising ways to improve air quality
-
-if you coach youth sports, you consider canceling practice if the AQI goes above 100.
-
-To help raise public awareness of air quality, I think placing air quality monitors at street level downtown and having live, color-coded displays announcing current AQI (and perhaps a 7-day plotted history) could be of use. Something near Pioneer Park could attract a lot of eyeballs. Having a Tesla sales booth stationed next to it while the Farmer's market is going on might result in a few sales..
-
-
-SO2 went from the primary pollutant up to 1995, when ozone overtook it. As of 2018 ozone is far and away the largest contributor to poor air quality in Salt Lake City.Is anything being done about it?  
-
-https://www.slc.gov/sustainability/air-quality/
-
-
-https://deq.utah.gov/air-quality/what-is-ozone
+If you're reading this, I'm not finished yet! (01 Mar 2020)
