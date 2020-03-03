@@ -2,6 +2,7 @@
 title: "R is for Art"
 date: 2020-02-17
 tags: [R, Data Visualization]
+classes: wide
 header:
   image: #"/image/"
 excerpt: "Using R to visualize elevation data."
@@ -23,7 +24,7 @@ That said, now and then this forced proximity can be great. Case in point: this 
 
 </center>
 
-<p style="text-align: center; font-style: italic;">Nantucket Island, by Jim Abraham. View more of his work <a href="https://www.abrahamartistry.com/">here.</a></p>
+<p style="text-align: center; font-style: italic;">Nantucket Island, by Jim Abraham. View more of his work <a href="https://www.abrahamartistry.com/">here</a>.</p>
 
 About a month after meeting Jim, I stumbled upon Rayshader - an R package that allows you to create detailed 3D renderings of topography using publicly available elevation data.
 
