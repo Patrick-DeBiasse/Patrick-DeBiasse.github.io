@@ -18,7 +18,7 @@ As a child, I remember watching my dad clean the fish tank. This was a bit of a 
 
 <center>
 
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/dirty_tank_compressed_2.jpg" alt="dirty fish tank">
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/dirty_tank_compressed_3.jpg" alt="dirty fish tank">
 
 </center>
 
@@ -81,12 +81,11 @@ Again, whichever pollutant has the highest AQI is what gets reported that day. W
 <p style="text-align: center; font-style: italic;"> The Air Quality Index (AQI) categories. </p>
 
 One final summary:
- - The EPA uses standard formulas to turn non-intuitive pollutant concentration data into a more intuitive Air Quality Index, or AQI
+ - The EPA uses standard formulas to turn non-intuitive pollutant concentration data into the more intuitive Air Quality Index (AQI)
  - AQI ranges from 0 to 500, which lower numbers signifying better air quality
- - The AQI reported on a given day is the highest AQI among the 5 primary pollutants it is calculated for (ozone, PM2.5 aka particle pollution, carbon monoxide, sulfur dioxide, and nitrogen dioxide)
- - In large cities (more than 350,000 people), state and local agencies are required to report the AQI to the public daily
- - When the AQI is above 100, agencies must report which groups (such as children or people with asthma), may be sensitive to that pollutant.
- - If two or more pollutants have AQI values above 100 on a given day,agencies must report all the groups that are sensitive to those pollutants. For example, if a community’s AQI is 120 for ozone and 105 for particle pollution, the AQI value for that day would be announced as 120 for ozone. The announcements would note that particle pollution levels were also high, and would alert groups sensitive to ozone or particle pollution about how to protect their health.
+ - The AQI reported on a given day is the highest AQI among the 5 primary pollutants (ozone, PM2.5 (particle pollution), carbon monoxide, sulfur dioxide, and nitrogen dioxide)
+  - If two or more pollutants have AQI values above 100 on a given day, the highest AQI will be announced, with warnings for both pollutants included in the accompanying message.
+  - In large cities (more than 350,000 people), state and local agencies are required to report the AQI to the public daily
 
 Equipped with that background, we can start looking at the data.
 
@@ -294,7 +293,7 @@ We now have a dataframe with annual AQI data for Salt Lake county from 1980 to 2
  - the primary pollutant (pollutant with the highest AQI) for each day of each year
  - median AQI for each year
 
-To visualize how air quality has changed over time, we'll graph all three aspects of the dataframe noted above. This can be done by splitting the original dataframe up into three separate ones:
+To visualize how air quality has changed over time, we'll graph all three aspects of the dataframe noted above by splitting the original dataframe up into three separate ones:
 
 
 ```python
@@ -549,16 +548,11 @@ The dataframes look good, let's graph things:
 ```python
 import matplotlib.pyplot as plt
 
-fig = df_AQI.plot.area(x='Year', color = ['green', 'yellow','orange', 'red', 'purple', 'black'])
+fig = df_AQI.plot.area(x='Year', color = ['green', 'yellow','orange', 'red', 'purple', 'black']) #defining colors to match AQI categories
 fig.legend(loc ='upper right',frameon=True, bbox_to_anchor=(1.75, 0.7))
 plt.ylabel('Days')
-plt.savefig(r'C:\Users\Pat\Desktop\Patrick-DeBiasse.github.io\assets\images\SLC_Air_Quality\rating_by_year.png', bbox_inches='tight', dpi=300)
-#plt.show()
+#plt.savefig(r'C:\Users\Pat\Desktop\Patrick-DeBiasse.github.io\assets\images\SLC_Air_Quality\rating_by_year.png', bbox_inches='tight', dpi=300)
 ```
-
-
-![png](output_8_0.png)
-
 
 <center>
 
@@ -580,12 +574,8 @@ fig = df_AQI_recent.plot.area(x='Year', color = ['green', 'yellow','orange', 're
 fig.legend(loc ='upper right',frameon=True, bbox_to_anchor=(1.75, 0.7))
 plt.xticks([2014, 2015, 2016, 2017, 2018])
 plt.ylabel('Days')
-plt.savefig(r'C:\Users\Pat\Desktop\Patrick-DeBiasse.github.io\assets\images\SLC_Air_Quality\recent_AQI_2.png', bbox_inches='tight', dpi = 300)
+#plt.savefig(r'C:\Users\Pat\Desktop\Patrick-DeBiasse.github.io\assets\images\SLC_Air_Quality\recent_AQI_2.png', bbox_inches='tight', dpi = 300)
 ```
-
-
-![png](output_10_0.png)
-
 
 <center>
 
@@ -596,19 +586,15 @@ plt.savefig(r'C:\Users\Pat\Desktop\Patrick-DeBiasse.github.io\assets\images\SLC_
 <p style="text-align: center; font-style: italic;"> Plot of SLC's Daily AQI from 2014 to 2018. </p>
 
 Since 2014, Salt Lake City has seen a decrease in "Good" air quality days. In their place we've had more "Moderate"
-and "Unhealthy for Sensitive Groups" days. This negative trend is further evidenced by plotting median AQI per year - great progress was made from 1980 to 2000, at which point progress stalled (and reversed in recent years):
+and "Unhealthy for Sensitive Groups" days. This negative trend is further evidenced by plotting median AQI per year - great progress was made from 1980 to 2000, at which point progress stalled, and reversed in recent years:
 
 
 ```python
 fig = df_median_AQI.plot.area(x='Year', stacked=True, legend = False)
 plt.axhline(y=50, linewidth=1, linestyle='-.', color='r')
 plt.ylabel('Median AQI')
-#plt.savefig(r'C:\Users\Pat\Desktop\Patrick-DeBiasse.github.io\assets\images\SLC_Air_Quality\median_AQI.png', bbox_inches='tight')
+#plt.savefig(r'C:\Users\Pat\Desktop\Patrick-DeBiasse.github.io\assets\images\SLC_Air_Quality\median_AQI.png', bbox_inches='tight', dpi=300)
 ```
-
-
-![png](output_12_0.png)
-
 
 <center>
 
@@ -625,12 +611,8 @@ The reference line is drawn at AQI=50. You might recall, an AQI below 50 signifi
 fig = df_pollutant.plot.area(x='Year', stacked=True)
 fig.legend(loc ='upper right',frameon=True, bbox_to_anchor=(1.4, 0.7))
 plt.ylabel('Days')
-plt.savefig(r'C:\Users\Pat\Desktop\Patrick-DeBiasse.github.io\assets\images\SLC_Air_Quality\pollutant_mix.png', bbox_inches='tight')
+#plt.savefig(r'C:\Users\Pat\Desktop\Patrick-DeBiasse.github.io\assets\images\SLC_Air_Quality\pollutant_mix.png', bbox_inches='tight', dpi=300)
 ```
-
-
-![png](output_14_0.png)
-
 
 <center>
 
@@ -642,35 +624,28 @@ plt.savefig(r'C:\Users\Pat\Desktop\Patrick-DeBiasse.github.io\assets\images\SLC_
 
 The plot above shows which pollutant is the primary contributor to poor air quality per day (which of the 5 has the highest AQI), from 1980 to 2018.
 
-Sulfur dioxide was the dominant pollutant from 1980 to 1995, at which point SO2 was greatly reduced and ozone surged. Today ozone is the biggeset contributor to poor air quality, and PM2.5 has also had a concerning rise since 2000.
+Sulfur dioxide was the dominant pollutant from 1980 to 1995, at which point it was greatly reduced while ozone surged. Today ozone is the biggeset contributor to poor air quality in the valley. PM2.5 has also had a concerning rise since 2000.
 
-What causes these pollutants? How harmful are they? Why are they increasing? How can we reduce air pollution in the valley?
+Some thoughts we might be sharing:
+ - What causes these pollutants?
+ - How harmful are they?
+ - Why are they increasing?
+ - How can we reduce air pollution in the valley?
 
-**Discussion**:
+ **Discussion**:
 
-1) What causes these pollutants?
-Ozone is a
-
-
-2) How harmful are they?
-
-3) Why are they increasing?
-Population increase in the valley doesn't help. Requires more energy, more cars, more infrastructure.
-
-4) How can we reduce air pollution in the valley?
+ (coming soon)
+ 03 Mar 2020
 
 
 **Conclusion**:
 
-discuss most promising ways to improve air quality
-
-if you coach youth sports, you consider canceling practice if the AQI goes above 100.
-
-To help raise public awareness of air quality, I think placing air quality monitors at street level downtown and having live, color-coded displays announcing current AQI (and perhaps a 7-day plotted history) could be of use. Something near Pioneer Park could attract a lot of eyeballs. Having a Tesla sales booth stationed next to it while the Farmer's market is going on might result in a few sales..
+(coming soon)
+03 Mar 2020
 
 
 **Future work**:
 
-Interactive plot.
+The original dataframe I made for this post contains AQI data for all counties across the U.S. from 1980 to 2018. In order to make this relevant for more people, I'd like to make an interactive plot using bokeh or plotly so users can select their state and county and get direct access to the plots I found useful in quantifying Salt Lake City's air quality. This could help communities diagnose the quality of their air at an AQI level, then look specifically at which primary sources of pollution are at fault.
 
-If you're reading this, I'm not finished yet! (01 Mar 2020)
+In addition, I found I really knew very little about how air quality is measured and communicated. (creating monitors in downtown SLC in high foot traffic areas to display live air quality and pollutant mix to directly communicate air quality, and bring some clarity to the fact that we are just like my household fish. Fortunately, we don't have to rely on others to improve our situation.
