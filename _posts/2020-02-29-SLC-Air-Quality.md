@@ -2,6 +2,7 @@
 title: "Air Quality in Salt Lake City"
 date: 2020-02-17
 tags: [Python, Pandas, Data Visualization]
+classes: wide
 header:
   image: #"/image/"
 excerpt: "Using Python to collect and explore EPA air quality data."
