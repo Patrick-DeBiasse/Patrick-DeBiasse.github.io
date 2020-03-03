@@ -16,7 +16,7 @@ Here I use R to download and manipulate simple XYZ elevation data for one of Sal
 
 A common source of anxiety when flying is anticipating your immediate neighbors - the screeching child, the sniffler who's "pretty sure it's just allergies", the max-screen-brightness-iPad on red-eye. Once seated 3 inches from one (or a few) of these, no amount of stroopwafel and headphone volume can really salvage things.  
 
-That said, now and then this forced proximity can be great. Case in point: this past November,  a 4 hour flight from Newark to Denver turned into a 4 hour chat spanning best neighborhoods in Philly, new cancer treatments, food truck entrepreneurship, and (the inspiration for this work) metallic topographical maps. My new friend's name was Jim Abraham, and among other things, he hand-sculpts metallic topographical maps. Here is Nantucket Island:
+That said, now and then this forced proximity is great. Case in point: this past November,  a 4 hour flight from Newark to Denver turned into a 4 hour chat spanning best neighborhoods in Philly, new cancer treatments, food truck entrepreneurship, and (the inspiration for this work) metallic topographical maps. My new friend's name was Jim Abraham, and among other things, he hand-sculpts metallic topographical maps. Here is Nantucket Island:
 
 <center>
 

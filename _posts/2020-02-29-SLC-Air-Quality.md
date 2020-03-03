@@ -12,13 +12,13 @@ excerpt: "Using Python to collect and explore EPA air quality data."
 
 Here I investigate how Salt Lake City's air quality has changed over time by downloading 38 years worth of data from the EPA, segmenting it into various dataframes with pandas, then exploring things visually with matplotlib.
 
-**Intro**:
+**Background**:
 
 As a child, I remember watching my dad clean the fish tank. This was a bit of a monthly ritual, as over that length of time it would go from clear to cloudy to “we should not be pet owners” dirty. I always felt bad for the fish in the days preceding this cleaning – when they were clearly bopping around in some nasty stuff:
 
 <center>
 
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/dirty_tank_compressed.jpg" alt="dirty fish tank">
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/dirty_tank_compressed_2.jpg" alt="dirty fish tank">
 
 </center>
 
@@ -34,9 +34,9 @@ Household fish aren’t the only ones subjected to such conditions. Many of us l
 
 <p style="text-align: center; font-style: italic;"> PM2.5 pollution across the U.S. </p>
 
-The blotch of red towards the middle-left of the country is Salt Lake City, where due to the perimeter of mountains surrounding the inhabited valley floor (forming a bowl-like geometry), nasty air can get trapped and accumulate. This is especially bad in the winter, when a blanket of warm air forms a “lid” on top of the colder valley floor – this is called the *winter inversion*, which is a spooky name.
+The blotch of red towards the middle-left of the country is Salt Lake City, where due to the perimeter of mountains surrounding the inhabited valley floor (forming a bowl-like geometry), pollutants can get trapped and accumulate. This is especially bad in the winter, when a blanket of warm air forms a “lid” on top of the colder valley floor – this is called the *winter inversion*, which is a spooky name.
 
-I had heard about this prior to moving to SLC, but so far this winter air quality hasn't seemed to be an issue. Is this inversion business just media hype? Is nasty air a thing of the past? I was curious to see what the air quality in SLC is today and how it has changed over time.
+I had heard about this prior to moving to SLC, but so far this winter (is March still winter?) air quality hasn't seemed to be an issue. Is this inversion business just media hype? Is polluted air in Salt Lake a thing of the past? I was curious to see what the air quality in SLC is today and how it has changed over time.
 
 Poking around, I came across an article in the Deseret News titled “Visualizing SLC air pollution in 35 years and what it tells us.” The [article]( https://www.deseret.com/2015/5/7/20564270/visualizing-slc-air-pollution-in-35-years-and-what-it-tells-us) links to a visualization which unfortunately returns “site can’t be reached.” I sent the author a note to let her know, and in the meantime decided to see if I could pull air quality data and visualize it myself.
 
@@ -74,7 +74,7 @@ Again, whichever pollutant has the highest AQI is what gets reported that day. W
 
 <center>
 
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/AQI_table_3_reduced.png" alt="AQI table: 0-50=good, 51-100=moderate,101-150=unhealthy for sensitive groups, 151-200=unhealthy, 210-300=very unhealthy, hazardous=301-500">
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/AQI_table_3_reduced_2.png" alt="AQI table: 0-50=good, 51-100=moderate,101-150=unhealthy for sensitive groups, 151-200=unhealthy, 210-300=very unhealthy, hazardous=301-500">
 
 </center>
 
@@ -552,7 +552,7 @@ import matplotlib.pyplot as plt
 fig = df_AQI.plot.area(x='Year', color = ['green', 'yellow','orange', 'red', 'purple', 'black'])
 fig.legend(loc ='upper right',frameon=True, bbox_to_anchor=(1.75, 0.7))
 plt.ylabel('Days')
-plt.savefig(r'C:\Users\Pat\Desktop\Patrick-DeBiasse.github.io\assets\images\SLC_Air_Quality\rating_by_year.png', bbox_inches='tight')
+plt.savefig(r'C:\Users\Pat\Desktop\Patrick-DeBiasse.github.io\assets\images\SLC_Air_Quality\rating_by_year.png', bbox_inches='tight', dpi=300)
 #plt.show()
 ```
 
@@ -580,7 +580,7 @@ fig = df_AQI_recent.plot.area(x='Year', color = ['green', 'yellow','orange', 're
 fig.legend(loc ='upper right',frameon=True, bbox_to_anchor=(1.75, 0.7))
 plt.xticks([2014, 2015, 2016, 2017, 2018])
 plt.ylabel('Days')
-plt.savefig(r'C:\Users\Pat\Desktop\Patrick-DeBiasse.github.io\assets\images\SLC_Air_Quality\recent_AQI.png', bbox_inches='tight')
+plt.savefig(r'C:\Users\Pat\Desktop\Patrick-DeBiasse.github.io\assets\images\SLC_Air_Quality\recent_AQI_2.png', bbox_inches='tight', dpi = 300)
 ```
 
 
@@ -595,8 +595,8 @@ plt.savefig(r'C:\Users\Pat\Desktop\Patrick-DeBiasse.github.io\assets\images\SLC_
 
 <p style="text-align: center; font-style: italic;"> Plot of SLC's Daily AQI from 2014 to 2018. </p>
 
-Since 2014, Salt Lake City has seen a decrease in good air quality days. In their place we've had more "Moderate"
-and "Unhealthy for Sensitive Groups" days. This is further evidenced by plotting median AQI per year - great progress was made from 1980 to 2000, at which point progress stalled (and reversed in recent years):
+Since 2014, Salt Lake City has seen a decrease in "Good" air quality days. In their place we've had more "Moderate"
+and "Unhealthy for Sensitive Groups" days. This negative trend is further evidenced by plotting median AQI per year - great progress was made from 1980 to 2000, at which point progress stalled (and reversed in recent years):
 
 
 ```python
@@ -644,6 +644,33 @@ The plot above shows which pollutant is the primary contributor to poor air qual
 
 Sulfur dioxide was the dominant pollutant from 1980 to 1995, at which point SO2 was greatly reduced and ozone surged. Today ozone is the biggeset contributor to poor air quality, and PM2.5 has also had a concerning rise since 2000.
 
-What causes these pollutants? How harmful are they? Why are they increasing? How can we get cleaner air in the valley?
+What causes these pollutants? How harmful are they? Why are they increasing? How can we reduce air pollution in the valley?
+
+**Discussion**:
+
+1) What causes these pollutants?
+Ozone is a
+
+
+2) How harmful are they?
+
+3) Why are they increasing?
+Population increase in the valley doesn't help. Requires more energy, more cars, more infrastructure.
+
+4) How can we reduce air pollution in the valley?
+
+
+**Conclusion**:
+
+discuss most promising ways to improve air quality
+
+if you coach youth sports, you consider canceling practice if the AQI goes above 100.
+
+To help raise public awareness of air quality, I think placing air quality monitors at street level downtown and having live, color-coded displays announcing current AQI (and perhaps a 7-day plotted history) could be of use. Something near Pioneer Park could attract a lot of eyeballs. Having a Tesla sales booth stationed next to it while the Farmer's market is going on might result in a few sales..
+
+
+**Future work**:
+
+Interactive plot.
 
 If you're reading this, I'm not finished yet! (01 Mar 2020)
