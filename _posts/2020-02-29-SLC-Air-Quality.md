@@ -636,7 +636,7 @@ Ozone is caused by a reaction of chemical precursors (predominantly those emitte
 
 <p style="text-align: center; font-style: italic;"> Graphic detailing how ozone forms (source: EPA). </p>
 
-PM2.5 (particulate pollution measuring less than 2.5 micrometers in diameter) comes from a variety of sources, including some of the aforementioned precursors VOC and NOX (caused by fossil fuel combustion), burning wood, dust, spores, pollen, and soot. Estimates from a 2014 study performed by the Utah Division of Air Quality
+PM2.5 (particulate pollution measuring less than 2.5 micrometers in diameter) comes from a variety of sources, including some of the aforementioned precursors VOC and NOX (caused by fossil fuel combustion), burning wood, dust, spores, pollen, and soot. Estimates from a 2014 study performed by the Utah Division of Air Quality clear things up a bit, identifying three main sources of PM2.5:  
 
 <center>
 
@@ -647,7 +647,7 @@ PM2.5 (particulate pollution measuring less than 2.5 micrometers in diameter) co
 <p style="text-align: center; font-style: italic;"> Sources of PM2.5 in Salt Lake, Davis, and Weber Counties (source: UDAQ, 2014 study). </p>
 
  - Point sources are large industrial or commercial facilities that emit more than 100 tons per year of a regulated pollutant.
- - Mobile sources are vehicles, trains, aircraft.
+ - Mobile sources are vehicles, trains, aircraft, boats, and so on.
  - Area sources are space heating of structures, smoke from wood burning, dust from roadways, and emissions from restaurants, dry cleaners, printing/graphics, and auto body shops.
 
  As you can see, ozone and PM2.5 share the same largest cause - the combustion of fossil fuels. This is convenient in that we could reduce both pollutants through the same actions.  
@@ -658,29 +658,29 @@ An "expert assessment" performed by a group of researchers at BYU compiled resea
 
 *"Air pollution shortens the life of the average Utahn by 2 (1.1 to 3.5) years. This loss of life is distributed across most of the population rather than only affecting "sensitive groups." For example, 75% of Utahns lose 1 year of life or more because of air pollution and 23% lose 5 years or more. These estimates are directly in line with medical studies of the health effects of exposure to air pollution."*
 
-The study goes on to identify the primary source of air pollution in Salt Lake City:
+The study goes on to identify the primary cause of air pollution in Salt Lake City:
 
 *"85% of the pollutants causing health and economic harm are fossil fuel combustion products (fine particulate matter, ozone, and various oxides)."*
 
 If you're curious, read more of the study's findings [here](https://pws.byu.edu/ben-abbott-lab/human-health-and-economic-costs-of-air-pollution-in-utah).
 
-Knowing that air pollution is genuinely harmful to our health, and that 85% of it is caused by fossil fuel combustion, how can we reduce these pollutants? While carpooling and improving the efficiency of our homes would help reduce fossil fuel emissions, transitioning to electric vehicles for our transport and renewable energy sources for our domestic and commercial structures would be a much more direct route to meaningfully improving Salt Lake City's air quality. With air quality on a negative trend for the past few years, and an appreciation of the associated health effects, I think more aggressive action isn't unwarranted.
+Knowing that air pollution is genuinely harmful to our health, and that 85% of it is caused by fossil fuel combustion, how can we go about reducing fossil fuel combustion in the valley?  While carpooling and improving the efficiency of our homes would help, transitioning to electric vehicles for our transport and renewable energy sources to power our homes and industries would be a much more direct route to meaningfully improving Salt Lake City's air quality. With air quality on a negative trend for the past few years, and an appreciation of the associated health effects, I think more aggressive action isn't unwarranted.
 
 I'm not alone - here's another finding from the BYU study:
 
 *"Utahns ranked air quality as the 3rd most important issue in the state, after only water and education, and 80% of Utahns said they would accept additional taxes and legislation to improve air quality."*
 
-With such support from the public, I hope Utah will accelerate the adoption of electric vehicles and implementation of renewable energy sources.
+With such support from the public, I hope Utah will accelerate the adoption of electric vehicles and implementation of renewable energy sources. The government could take the lead on this by electrifying their fleet vehicles where applicable. This happens to be the #2 recommendation made by a 37-person (yikes) Technical Advisory Committee tasked with informing Utah's legislature on how best to improve our air quality. Check out all 7 recommendations made by the committee [here](https://gardner.utah.edu/wp-content/uploads/Utah-Roadmap-Public-Draft.pdf).
 
 **Conclusion**:
 
-Despite great progress from 1980 to 1995, air quality in Salt lake City has become worse in recent years. The primary causes of this alarming trend are ozone (smog) and PM2.5 (particulate pollution). These pollutants are caused in large part by the combustion of fossil fuels within the valley's transportation, residential energy needs, and manufacturing/commercial energy needs. Accelerating the adoption of electric vehicles and renewable energy sources is the most direct route to improving air quality in Salt Lake City.
+Despite great progress from 1980 to 1995, air quality in Salt lake City has become worse in recent years. The pollutants most responsible for this alarming trend are ozone (smog) and PM2.5 (particulate pollution). Both of these pollutants are caused in large part by the combustion of fossil fuels within the valley's transportation and residential/commercial energy needs. Accelerating the adoption of electric vehicles and renewable energy sources is the most direct route to improving air quality in Salt Lake City.
 
 **Future work**:
 
 The original dataframe I made for this post contains AQI data for all counties across the U.S. from 1980 to 2018. In order to make air quality data accessible for more people, I'd like to make an interactive plot using bokeh or plotly that would allow users to select their own state and county and get direct access to the plots I found useful in assessing Salt Lake City's air quality. This could help communities diagnose the quality of their air at an AQI level, then look specifically at which primary sources of pollution are at fault, thus better informing their efforts at improving their air.
 
-In addition, through this work I found I really knew very little about how air quality is measured, communicated, and how harmful polluted air is. Placing more visible air quality monitors downtown in high foot traffic areas that display live readouts of air quality and pollutant mix could help educate others and further increase public awareness of the issue.
+In addition, through this work I found I really knew very little about how air quality is measured, communicated, and how harmful polluted air can be. Placing more visible air quality monitors downtown in high foot traffic areas that display live readouts of air quality and pollutant mix could help educate others and further increase public awareness of the issue, potentially accelerating political action.
 
 **References**:
 
