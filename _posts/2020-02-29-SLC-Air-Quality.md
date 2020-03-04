@@ -60,7 +60,7 @@ Zooming in on SLC, we can see the valley has 5 active monitors:
 
 <p style="text-align: center; font-style: italic;"> Air quality monitors in Salt Lake City. </p>
 
-The EPA takes the pollutant concentration data from these monitors (some measured in parts per million, others in parts per billion), and translates them into a more intuitive measurement called the Air Quality Index, or AQI. The AQI is calculated for each of the primary pollutants individually, with the  highest AQI of the bunch being what gets reported. The chart below gives an idea of how each pollutant's concentration is converted into AQI:
+The EPA takes the pollutant concentration data from these monitors (some measured in parts per million, some in parts per billion, others microgram per cubic meter), and translates them into a more intuitive measurement called the Air Quality Index, or AQI. The AQI is calculated for each of the primary pollutants individually, with the  highest AQI of the bunch being the number that gets reported. The table below gives an idea of how each pollutant's concentration is converted into AQI:
 
 <center>
 
@@ -72,16 +72,12 @@ The EPA takes the pollutant concentration data from these monitors (some measure
 
 Looking at the right side of the table, you can see AQI ranges from 0 to 500, with higher numbers signifying worse air quality. 0 to 50 is "Good" air quality (green), 51 to 100 is "Moderate" air quality (yellow), and so on.   
 
-**#######removed this picture, it's redundant:**
-
-One final summary:
+Before getting into the data, one final summary:
  - The EPA uses standard formulas to turn non-intuitive pollutant concentration data into the more intuitive Air Quality Index (AQI)
  - AQI ranges from 0 to 500, with lower numbers signifying better air quality
  - The AQI reported on a given day is the highest AQI among the 5 primary pollutants (ozone, PM2.5 (particle pollution), carbon monoxide, sulfur dioxide, and nitrogen dioxide)
   - If two or more pollutants have AQI values above 100 on a given day, the highest AQI will be announced, with warnings for both pollutants included in the accompanying message.
   - In large cities (more than 350,000 people), state and local agencies are required to report the AQI to the public daily
-
-Equipped with that background, we can start looking at the data.
 
 **Analysis**:
 
@@ -283,11 +279,11 @@ df_SLC.head(5)
 
 
 We now have a dataframe with annual AQI data for Salt Lake county from 1980 to 2018. It includes:
- - the AQI categorical rating for each day of each year
+ - the AQI categorical rating for each day of each year ("Good", "Moderate", "Unhealthy for Sensitive Groups", and so on)
  - the primary pollutant (pollutant with the highest AQI) for each day of each year
  - median AQI for each year
 
-To visualize how air quality has changed over time, we'll graph all three aspects of the dataframe noted above by splitting the original dataframe up into three separate ones:
+To investigate these different aspects of the data, I split the original dataframe up into three separate ones:
 
 
 ```python
@@ -558,7 +554,7 @@ plt.ylabel('Days')
 
 From 1980 to 2018, there has been a fairly dramatic shift towards improved air quality, as signified by an increase in "Good" and "Moderate" days and a decrease in "Unhealthy" ones. 1982 would've been an especially good year to hold your breath.
 
-However, there does seem to be a decrease in the number of "Good" air quality days in recent years. Looking specifically at that portion of the graph, things become more clear:
+That said, there does seem to be a decrease in the number of "Good" air quality days in recent years. Looking specifically at that portion of the graph, things become more clear:
 
 
 ```python
@@ -580,7 +576,7 @@ plt.ylabel('Days')
 <p style="text-align: center; font-style: italic;"> Plot of SLC's Daily AQI from 2014 to 2018. </p>
 
 Since 2014, Salt Lake City has seen a decrease in "Good" air quality days. In their place we've had more "Moderate"
-and "Unhealthy for Sensitive Groups" days. This negative trend is further evidenced by plotting median AQI per year - great progress was made from 1980 to 2000, at which point progress stalled, then reversed in recent years:
+and "Unhealthy for Sensitive Groups" days. This negative trend is further evidenced by plotting median AQI per year:
 
 
 ```python
@@ -598,14 +594,16 @@ plt.ylabel('Median AQI')
 
 <p style="text-align: center; font-style: italic;"> Plot of SLC's Median AQI per year from 1980 to 2018. </p>
 
-The reference line is drawn at AQI=50. You might recall, an AQI below 50 signifies "Good" air quality, while an AQI between 50 and 100 signifies "Moderate" air quality. Which pollutants are contributing to the recent increase in median AQI?
+The reference line is drawn at AQI=50. You might recall, an AQI below 50 signifies "Good" air quality, while an AQI between 50 and 100 signifies "Moderate" air quality. Great progress was made from 1980 to 2000 in reducing median AQI, at which point progress stalled, then sadly reversed in recent years.
+
+Which pollutants are contributing to the recent increase in median AQI?
 
 
 ```python
 fig = df_pollutant.plot.area(x='Year', stacked=True)
 fig.legend(loc ='upper right',frameon=True, bbox_to_anchor=(1.4, 0.7))
 plt.ylabel('Days')
-plt.savefig(r'C:\Users\Pat\Desktop\Patrick-DeBiasse.github.io\assets\images\SLC_Air_Quality\pollutant_mix.png', bbox_inches='tight', dpi=300)
+#plt.savefig(r'C:\Users\Pat\Desktop\Patrick-DeBiasse.github.io\assets\images\SLC_Air_Quality\pollutant_mix.png', bbox_inches='tight', dpi=300)
 ```
 
 <center>
@@ -618,114 +616,71 @@ plt.savefig(r'C:\Users\Pat\Desktop\Patrick-DeBiasse.github.io\assets\images\SLC_
 
 The plot above shows which pollutant is the primary contributor to poor air quality per day (which of the 5 has the highest AQI), from 1980 to 2018.
 
-Sulfur dioxide was the dominant pollutant from 1980 to 1995, at which point it was greatly reduced while ozone surged. Today ozone is the biggeset contributor to poor air quality in the valley. PM2.5 has also had a concerning rise since 2000.
+Sulfur dioxide was the dominant pollutant from 1980 to 1995, at which point it was reduced while ozone (more commonly known as smog) surged. Today ozone is the largest contributor to poor air quality in the valley. PM2.5 has also had a concerning rise since 2000.
 
 Some thoughts we might be sharing:
- - What causes these pollutants?
+ - What causes ozone and PM2.5 pollution?
  - How harmful are they?
  - Why are they increasing?
  - How can we reduce air pollution in the valley?
 
  **Discussion**:
 
-Ozone (more commonly known as smog) is caused by a reaction of "precursors" and sunglight:
-#insert equation
+Ozone is caused by a reaction of chemical precursors (predominantly those emitted during the comubstion of fossil fuels) and UV rays from sunglight:
 
-The sunlight component is why smog is much worse in the summer than in winter. With the above in mind, we can reduce ozone by reducing the quantity of these precursors we emit into the air. The primary sources of these precursors are:
-#potentially pie graph from that article
+<center>
 
-PM2.5 are
-#picture of how tiny PM2.5 particles are - not the dust you might see when the sun comes through the windows and illuminates strange floating particles, these are so small they can only be seen by electron scanning microscope. Sources of these tiny particles include ___ ___ In this way - ozone and PM2.5 share common sources - so we could theoretically reduce both throug the same actions.
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/ozone_formation.jpg" alt="Graphic of NOX and VOC forming ozone pollution.">
 
-That said, is our air quality currently "good enough"? What kind of health issues do these pollutants actually cause?
-#bring in quote from the formal BYU study on effect of pollution in the valley
-#link to our world in data post on air pollution world-wide
+</center>
 
-Knowing that these are genuinely harmful to our health, how can we reduce them? Limiting the sources is the most direct route - but which sources contribute which portion of the overall pollution?
-#add pie chart
+<p style="text-align: center; font-style: italic;"> Graphic detailing how ozone forms (source: EPA). </p>
 
-Some potential sollutions to reduce pollutions from each of these contributors:
- - mobile sources: fleet electrification, incentivize electric car sales
- - stationary sources: encourage installation of increased efficiency appliances and insulation
+PM2.5 (particulate pollution measuring less than 2.5 micrometers in diameter) comes from a variety of sources, including some of the aforementioned precursors VOC and NOX (caused by fossil fuel combustion), burning wood, dust, spores, pollen, and soot. Estimates from a 2014 study performed by the Utah Division of Air Quality
 
-With the population rising quickly, things become more challenging. There are now more fish in the fish tank - more cars on the roads, more homes requiring electricity, etc.  
+<center>
 
-The Utah government has done X, Y, Z, but judging by the worsening air quality in the valley since 2014 you might think more aggressive action is warranted.  
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SLC_Air_Quality/pm2.5.png" alt="Pie chart of sources of pm2.5 pollution in SLC.">
 
+</center>
 
-1) What causes these pollutants?
-Ozone (also known as smog) and PM2.5 (particulate matter with a diameter less than 2.5 micrometers) share quite a few sources. Ozone
+<p style="text-align: center; font-style: italic;"> Sources of PM2.5 in Salt Lake, Davis, and Weber Counties (source: UDAQ, 2014 study). </p>
 
-Bad ozone forms near the ground when pollutants (emitted by sources such as cars, power plants, industrial boilers, refineries, and chemical plants) react chemically in sunlight. Ozone pollution is more likely to form during warmer months. This is when the weather conditions normally needed to form ground-level ozone—lots of sun—occur.
+ - Point sources are large industrial or commercial facilities that emit more than 100 tons per year of a regulated pollutant.
+ - Mobile sources are vehicles, trains, aircraft.
+ - Area sources are space heating of structures, smoke from wood burning, dust from roadways, and emissions from restaurants, dry cleaners, printing/graphics, and auto body shops.
 
-"Ozone develops in the atmosphere from gases that come out of tailpipes, smokestacks and many other sources,” reports ALA. “When these gases come in contact with sunlight, they react and form ozone smog.”
+ As you can see, ozone and PM2.5 share the same largest cause - the combustion of fossil fuels. This is convenient in that we could reduce both pollutants through the same actions.  
 
-Major sources of fine particles include motor vehicles, power plants, residential wood burning, forest fires, agricultural burning, some industrial processes, and other combustion processes.
+That said, is our air quality currently "good enough"? What kind of health issues do these pollutants actually cause to those living in Salt Lake?  
 
-As for particulate pollution, it too comes from a wide range of both mobile and stationary sources. “Burning fossil fuels in factories, power plants, steel mills, smelters, diesel- and gasoline-powered motor vehicles (cars and trucks) and equipment generates a large part of the raw material for fine particles,” explains ALA. “So does burning wood in residential fireplaces and wood stoves or burning agricultural fields or forests.”
-More information can be found [here](https://airnow.gov/index.cfm?action=aqi_brochure.index).
+An "expert assessment" performed by a group of researchers at BYU compiled research from 21 experts across medicine, public health, atmospherice science, and economics to understand the costs of air pollution in Utah. Their #1 key finding was:
 
-2) How harmful are they?
+*"Air pollution shortens the life of the average Utahn by 2 (1.1 to 3.5) years. This loss of life is distributed across most of the population rather than only affecting "sensitive groups." For example, 75% of Utahns lose 1 year of life or more because of air pollution and 23% lose 5 years or more. These estimates are directly in line with medical studies of the health effects of exposure to air pollution."*
 
-Several groups of people are particularly sensitive to ozone, especially when they are active outdoors. This is because ozone levels are higher outdoors, and physical activity causes faster and deeper breathing, drawing more ozone into the body.
+The study goes on to identify the primary source of air pollution in Salt Lake City:
 
-People with lung diseases, such as asthma, chronic bronchitis, and emphysema, can be particularly sensitive to ozone. They will generally experience more serious health effects at lower levels. Ozone can aggravate their diseases, leading to increased medication use, doctor and emergency room visits, and hospital admissions.
+*"85% of the pollutants causing health and economic harm are fossil fuel combustion products (fine particulate matter, ozone, and various oxides)."*
 
-Children, including teenagers, are at higher risk from ozone exposure because they often play outdoors in warmer weather when ozone levels are higher, they are more likely to have asthma (which may be aggravated by ozone exposure), and their lungs are still developing.
+If you're curious, read more of the study's findings [here](https://pws.byu.edu/ben-abbott-lab/human-health-and-economic-costs-of-air-pollution-in-utah).
 
-Older adults may be more affected by ozone exposure, possibly because they are more likely to have pre-existing lung disease.
+Knowing that air pollution is genuinely harmful to our health, and that 85% of it is caused by fossil fuel combustion, how can we reduce these pollutants? While carpooling and improving the efficiency of our homes would help reduce fossil fuel emissions, transitioning to electric vehicles for our transport and renewable energy sources for our domestic and commercial structures would be a much more direct route to meaningfully improving Salt Lake City's air quality. With air quality on a negative trend for the past few years, and an appreciation of the associated health effects, I think more aggressive action isn't unwarranted.
 
-Active people of all ages who exercise or work vigorously outdoors are at increased risk.
+I'm not alone - here's another finding from the BYU study:
 
-Some healthy people are more sensitive to ozone. They may experience health effects at lower ozone levels than the average person even though they have none of the risk factors listed above. There may be a genetic basis for this increased sensitivity.
-In general, as concentrations of ground-level ozone increase, more people begin to experience more serious health effects. When levels are very high, everyone should be concerned about ozone exposure.
-Breathing in smog, while inevitable in certain urban and industrial areas, can irritate the cardiovascular system and cause other health problems.
-Chronic exposure to particulate pollution has been linked not only to cardiovascular issues but also to cancers and reproductive problems—and has been shown to contribute to premature death.
+*"Utahns ranked air quality as the 3rd most important issue in the state, after only water and education, and 80% of Utahns said they would accept additional taxes and legislation to improve air quality."*
 
-
-https://www.slc.gov/sustainability/air-quality/
-
-
-https://deq.utah.gov/air-quality/what-is-ozone
-
-3) Why are they increasing?
-Population increase in the valley doesn't help. Requires more energy, more cars, more infrastructure.
-
-4) How can we reduce air pollution in the valley?
-bring in info from this: http://home.chpc.utah.edu/~whiteman/PM2.5/PM2.5.html
-discuss wood burning "spare the air" days
-no idle laws here compared to nyc
-electrifying fleet vehicles
-improving energy efficiency in homes and buildings
-
-
-based on what causes them, what the most promising ways to reduce them are
-- electric vehicles?
-https://energy.utah.gov/wp-content/uploads/2019/07/State-of-Utah-EV-MasterL.pdf
-page 7 #5
-http://www.swenergy.org/data/sites/1/media/documents/publications/documents/2017_EV_Emissions_Update_Wasatch_Front_Jan-2017.pdf
-market penetration: only 3% or 8% of vehicle sales by 2035?? Seems low.
-
-discuss idle ban put in place by new york? People who submit 4 minute video to report people get up to 25% of the fine! One dude made $16k
-
-- banning burning wood?
-
+With such support from the public, I hope Utah will accelerate the adoption of electric vehicles and implementation of renewable energy sources.
 
 **Conclusion**:
 
-discuss most promising ways to improve air quality
-
-if you coach youth sports, you consider canceling practice if the AQI goes above 100.
-
-To help raise public awareness of air quality, I think placing air quality monitors at street level downtown and having live, color-coded displays announcing current AQI (and perhaps a 7-day plotted history) could be of use. Something near Pioneer Park could attract a lot of eyeballs. Having a Tesla sales booth stationed next to it while the Farmer's market is going on might result in a few sales..
-
+Despite great progress from 1980 to 1995, air quality in Salt lake City has become worse in recent years. The primary causes of this alarming trend are ozone (smog) and PM2.5 (particulate pollution). These pollutants are caused in large part by the combustion of fossil fuels within the valley's transportation, residential energy needs, and manufacturing/commercial energy needs. Accelerating the adoption of electric vehicles and renewable energy sources is the most direct route to improving air quality in Salt Lake City.
 
 **Future work**:
 
-The original dataframe I made for this post contains AQI data for all counties across the U.S. from 1980 to 2018. In order to make this relevant for more people, I'd like to make an interactive plot using bokeh or plotly so users can select their state and county and get direct access to the plots I found useful in quantifying Salt Lake City's air quality. This could help communities diagnose the quality of their air at an AQI level, then look specifically at which primary sources of pollution are at fault.
+The original dataframe I made for this post contains AQI data for all counties across the U.S. from 1980 to 2018. In order to make air quality data accessible for more people, I'd like to make an interactive plot using bokeh or plotly that would allow users to select their own state and county and get direct access to the plots I found useful in assessing Salt Lake City's air quality. This could help communities diagnose the quality of their air at an AQI level, then look specifically at which primary sources of pollution are at fault, thus better informing their efforts at improving their air.
 
-In addition, I found I really knew very little about how air quality is measured and communicated. Placing more visible monitors downtown in high foot traffic areas to display live air quality and pollutant mix could help educate others.
-by clarifying directly communicate air quality, and bring some clarity to the fact that we are just like my household fish. Fortunately, we don't have to rely on others to improve our situation.
+In addition, through this work I found I really knew very little about how air quality is measured, communicated, and how harmful polluted air is. Placing more visible air quality monitors downtown in high foot traffic areas that display live readouts of air quality and pollutant mix could help educate others and further increase public awareness of the issue.
 
 **References**:
 
