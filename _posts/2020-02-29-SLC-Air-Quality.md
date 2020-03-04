@@ -626,7 +626,7 @@ Some thoughts we might be sharing:
 
  **Discussion**:
 
-Ozone is caused by a reaction of chemical precursors (predominantly those emitted during the comubstion of fossil fuels) and UV rays from sunglight:
+Ozone is caused by a reaction of chemical precursors (predominantly those emitted during the combustion of fossil fuels) and UV rays from sunlight:
 
 <center>
 
@@ -654,7 +654,7 @@ PM2.5 (particulate pollution measuring less than 2.5 micrometers in diameter) co
 
 That said, is our air quality currently "good enough"? What kind of health issues do these pollutants actually cause to those living in Salt Lake?  
 
-An "expert assessment" performed by a group of researchers at BYU compiled research from 21 experts across medicine, public health, atmospherice science, and economics to understand the costs of air pollution in Utah. Their #1 key finding was:
+An "expert assessment" performed by a group of researchers at BYU compiled research from 21 experts across medicine, public health, atmospheric science, and economics to understand the costs of air pollution in Utah. Their #1 key finding was:
 
 *"Air pollution shortens the life of the average Utahn by 2 (1.1 to 3.5) years. This loss of life is distributed across most of the population rather than only affecting "sensitive groups." For example, 75% of Utahns lose 1 year of life or more because of air pollution and 23% lose 5 years or more. These estimates are directly in line with medical studies of the health effects of exposure to air pollution."*
 
