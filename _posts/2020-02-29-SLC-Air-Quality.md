@@ -10,7 +10,7 @@ excerpt: "Using Python to collect and explore EPA air quality data."
 
 **Abstract**:
 
-Here I investigate how Salt Lake City's air quality has changed over time by downloading 38 years of data from the EPA, segmenting it into various dataframes with pandas, then exploring them visually with matplotlib. After identifying the two key pollutants causing poor air quality, I discuss how we might be able to reduce them.
+Here I investigate how Salt Lake City's air quality has changed over time by downloading 38 years of data from the EPA, segmenting it into various dataframes with pandas, then exploring them visually with matplotlib. After identifying the two primary pollutants causing poor air quality, I discuss how we might be able to reduce them. The Jupyter Notebook used to write this post can be found on my github [here](https://github.com/Patrick-DeBiasse/SLC-Air-Quality/).
 
 **Background**:
 
