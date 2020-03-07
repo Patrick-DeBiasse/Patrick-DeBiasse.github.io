@@ -10,7 +10,7 @@ excerpt: "Using R to visualize elevation data."
 
 **Abstract**:
 
-Here I use R to download and manipulate XYZ elevation data for one of Salt Lake City's most popular hikes into a detailed 3D model of the region. The R Markdown file used to write this post can be found on my github [here](https://github.com/Patrick-DeBiasse/Topography-Visualizations).
+Here I use R to download and manipulate XYZ elevation data for one of Salt Lake City's most popular hikes into a detailed 3D model of the region. The R Markdown file used to write this post can be found on my [github](https://github.com/Patrick-DeBiasse/Topography-Visualizations).
 
 **Intro**:
 
