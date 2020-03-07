@@ -10,7 +10,7 @@ excerpt: "Using R to visualize elevation data."
 
 **Abstract**:
 
-Here I use R to download and manipulate simple XYZ elevation data for one of Salt Lake City's most popular hikes into a rich 3D model of the region, complete with a satellite image overlay.  
+Here I use R to download and manipulate XYZ elevation data for one of Salt Lake City's most popular hikes into a detailed 3D model of the region. The R Markdown file used to write this post can be found on my github [here](https://github.com/Patrick-DeBiasse/Topography-Visualizations).
 
 **Intro**:
 
@@ -51,8 +51,6 @@ See below for the code used to generate the rendering. In general, the process i
 4. Download the region's elevation data and transform it to Rayshader's liking
 5. Add a satellite image overlay of the region (optional, but cool)
 6. Render the final scene (in this case, a rotating "flyover" video of the region)
-
-The full, uninterrupted code can be found on my GitHub [here](https://github.com/Patrick-DeBiasse/Topography-Visualizations).
 
 **Load packages**:
 
