@@ -10,7 +10,7 @@ excerpt: "Using Python to collect and explore EPA air quality data."
 
 **Abstract**:
 
-Here I investigate how Salt Lake City's air quality has changed over time by downloading 38 years of data from the EPA, segmenting it into various dataframes with pandas, then exploring them visually with matplotlib. After identifying the two primary pollutants causing poor air quality, I discuss how we might be able to reduce them. The Jupyter Notebook used to write this post can be found on my [github](https://github.com/Patrick-DeBiasse/SLC-Air-Quality/).
+In this project, I investigate how Salt Lake City's air quality has changed over time by downloading 38 years of data from the EPA, segmenting it into various dataframes with pandas, then exploring them visually with matplotlib. After identifying the two primary pollutants causing poor air quality in the valley, I discuss how we might be able to reduce them. The Jupyter Notebook used to write this post can be found on my github [here](https://github.com/Patrick-DeBiasse/SLC-Air-Quality/).
 
 **Background**:
 
@@ -36,9 +36,9 @@ Household fish aren’t the only ones subjected to such conditions. Many of us s
 
 The blotch of red towards the middle-left of the country is Salt Lake City, where due to the perimeter of mountains surrounding the inhabited valley floor (forming a bowl-like geometry), pollutants get trapped and accumulate. This is especially bad in the winter, when a blanket of warm air forms a “lid” on top of the bowl – this effect is known as the *winter inversion*.  
 
-I had heard about this spooky effect prior to moving to SLC, but so far this winter air quality hasn't seemed to be an issue. Is this inversion business just media hype? Is polluted air in Salt Lake a thing of the past? I was curious to see what the air quality in SLC is today and how it has changed over time.
+I had heard about this spooky effect prior to moving to SLC, but so far this winter, air quality hasn't seemed to be an issue. Is this inversion business just media hype? Is polluted air in Salt Lake a thing of the past? I was curious to see what the air quality in SLC is today and how it has changed over time.
 
-Poking around, I came across an article in the Deseret News titled “Visualizing SLC air pollution in 35 years and what it tells us.” The [article]( https://www.deseret.com/2015/5/7/20564270/visualizing-slc-air-pollution-in-35-years-and-what-it-tells-us) links to a visualization, but the link is broken. I sent the author a note to let her know, and in the meantime decided to see if I could pull air quality data and visualize it myself.
+Poking around, I came across an article in the Deseret News titled “Visualizing SLC air pollution in 35 years and what it tells us.” The [article]( https://www.deseret.com/2015/5/7/20564270/visualizing-slc-air-pollution-in-35-years-and-what-it-tells-us) links to a visualization, but sadly, the page it links to does not load. I sent the author a note to let her know, and in the meantime decided to see if I could pull air quality data and visualize it myself.
 
 Fortunately, the EPA makes air quality data available to the public via their AirData Quality Monitors [web app](https://epa.maps.arcgis.com/apps/webappviewer/index.html?id=5f239fd3e72f424f98ef3d5def547eb5&extent=-146.2334,13.1913,-46.3896,56.5319). Below are all the monitors across the U.S. for the five primary pollutants used in evaluating air quality (carbon monoxide, nitrogen dioxide, ozone, PM2.5, and sulfur dioxide):
 
@@ -48,9 +48,9 @@ Fortunately, the EPA makes air quality data available to the public via their Ai
 
 </center>
 
-<p style="text-align: center; font-style: italic;"> Air quality monitors in the U.S. </p>
+<p style="text-align: center; font-style: italic;"> Air quality monitors across the U.S. </p>
 
-Zooming in on SLC, we can see the valley has 5 active monitors:
+Zooming in on SLC, we can see the valley has five active monitors:
 
 <center>
 
@@ -60,7 +60,7 @@ Zooming in on SLC, we can see the valley has 5 active monitors:
 
 <p style="text-align: center; font-style: italic;"> Air quality monitors in Salt Lake City. </p>
 
-The EPA takes the pollutant concentration data from these monitors (some measured in parts per million, some in parts per billion, others microgram per cubic meter), and translates them into a more intuitive measurement called the Air Quality Index, or AQI. The AQI is calculated for each of the primary pollutants individually, with the  highest AQI of the bunch being the number that gets reported. The table below gives an idea of how each pollutant's concentration is converted into AQI:
+The EPA takes the pollutant concentration data from these monitors (some measured in parts per million, some in parts per billion, others microgram per cubic meter), and translates them into a more intuitive measurement called the Air Quality Index, or AQI. The AQI is calculated for each of the primary pollutants individually, with the  highest AQI of the group being the number that gets reported to describe air quality on a given day. The table below gives an idea of how each pollutant's concentration is converted into the AQI:
 
 <center>
 
@@ -70,18 +70,13 @@ The EPA takes the pollutant concentration data from these monitors (some measure
 
 <p style="text-align: center; font-style: italic;"> Detail on how AQI is calculated per pollutant. </p>
 
-Looking at the right side of the table, you can see AQI ranges from 0 to 500, with higher numbers signifying worse air quality. 0 to 50 is "Good" air quality (green), 51 to 100 is "Moderate" air quality (yellow), and so on.   
+Looking at the right side of the table, you can see the AQI ranges from 0 to 500, with higher numbers signifying worse air quality. 0 to 50 is "Good" air quality (green), 51 to 100 is "Moderate" air quality (yellow), and so on.   
 
-Before getting into the data, one final summary:
- - The EPA uses standard formulas to turn non-intuitive pollutant concentration data into the more intuitive Air Quality Index (AQI)
- - AQI ranges from 0 to 500, with lower numbers signifying better air quality
- - The AQI reported on a given day is the highest AQI among the five primary pollutants (ozone, PM2.5 (particle pollution), carbon monoxide, sulfur dioxide, and nitrogen dioxide)
-  - If two or more pollutants have AQI values above 100 on a given day, the highest AQI will be announced, with warnings for both pollutants included in the accompanying message.
-  - In large cities (more than 350,000 people), state and local agencies are required to report the AQI to the public daily
+Equipped with that background, we can start analyzing air quality data.
 
 **Analysis**:
 
-The EPA has made daily AQI data across the U.S. available from 1980 to today. 2019's data isn't complete just yet, so I pulled data for 1980 to 2018.
+The EPA has made daily AQI data across the U.S. available from 1980 to today. 2019's data isn't complete just yet, so I pulled data from 1980 to 2018.
 
 
 ```python
@@ -92,7 +87,7 @@ import zipfile
 import glob
 import io
 
-#pulling annual AQI data by county for 1980 to 2018, unzipping and placing the csv files in a folder on my desktop
+#pulling annual AQI data by county for 1980 to 2018, unzipping and placing the csv files in a desktop folder
 for i in range(1980, 2019):
     zip_file_url = 'https://aqs.epa.gov/aqsweb/airdata/annual_aqi_by_county_' + str(i) + '.zip'
     r = requests.get(zip_file_url, stream=True)
@@ -280,9 +275,9 @@ df_SLC.head()
 
 
 We now have a dataframe with annual AQI data for Salt Lake County from 1980 to 2018. It includes:
- - the AQI categorical rating for each day of each year ("Good", "Moderate", "Unhealthy for Sensitive Groups", and so on)
+ - the AQI categorical rating ("Good", "Moderate", "Unhealthy for Sensitive Groups", and so on) for each day of each year
  - the primary pollutant (pollutant with the highest AQI) for each day of each year
- - median AQI for each year
+ - the median AQI for each year
 
 To investigate these different aspects of the data, I split the original dataframe up into three separate ones:
 
@@ -295,6 +290,7 @@ df_median_AQI = df_SLC[['Year', 'Median AQI']]
 
 
 ```python
+#viewing the first 5 rows of the AQI dataframe
 df_AQI.head()
 ```
 
@@ -387,6 +383,7 @@ df_AQI.head()
 
 
 ```python
+#viewing the first 5 rows of the primary pollutant dataframe
 df_pollutant.head()
 ```
 
@@ -473,6 +470,7 @@ df_pollutant.head()
 
 
 ```python
+#viewing the first 5 rows of the median AQI dataframe
 df_median_AQI.head()
 ```
 
@@ -553,7 +551,7 @@ plt.ylabel('Days')
 
 <p style="text-align: center; font-style: italic;"> Plot of SLC's Daily AQI from 1980 to 2018. </p>
 
-From 1980 to 2018, there has been a fairly dramatic shift towards improved air quality, as signified by an increase in "Good" and "Moderate" days and a decrease in "Unhealthy" ones. 1982 would have been an especially good year to hold your breath.
+From 1980 to 2018, there has been a fairly dramatic shift towards improved air quality, as signified by an increase in "Good" and "Moderate" days and a decrease in "Unhealthy" ones. 1982 would have been an especially good year to hold your breath, while 2014 looks quite green.
 
 That said, there does seem to be a decrease in the number of "Good" air quality days in recent years. Looking specifically at that portion of the graph, things become more clear:
 
@@ -617,7 +615,7 @@ plt.ylabel('Days')
 
 The plot above shows which pollutant is the primary contributor to poor air quality per day (which of the five has the highest AQI), from 1980 to 2018.
 
-Sulfur dioxide was the dominant pollutant from 1980 to 1995, at which point it was dramatically reduced. In its place ozone (more commonly known as smog) has surged. Today ozone is the largest contributor to poor air quality in the valley. PM2.5 has also had a concerning rise since 2000.
+Sulfur dioxide was the dominant pollutant from 1980 to 1995, at which point its presence dramatically reduced. In its place, ozone (more commonly known as smog) has surged. Today ozone is the largest contributor to poor air quality in the valley. PM2.5 has also had a concerning rise since 2000.
 
 Having identified these two pollutants, I had some questions:
  - What causes ozone and PM2.5 pollution?
@@ -627,7 +625,7 @@ Having identified these two pollutants, I had some questions:
 
  **Discussion**:
 
-Ozone is caused by a reaction of chemical precursors (predominantly those emitted during the combustion of fossil fuels) and UV rays from sunlight:
+Ozone is caused by a reaction of chemical precursors NOx and VOC (predominantly caused by the combustion of fossil fuels) and UV rays from sunlight:
 
 <center>
 
@@ -673,13 +671,15 @@ I'm not alone - here's another finding from the BYU study:
 
 With such support from the public, I hope Utah will accelerate the adoption of electric vehicles and implementation of renewable energy sources. The government could take the lead on this by electrifying their fleet vehicles where applicable. This happens to be the #2 recommendation made by a 37-person Technical Advisory Committee tasked with informing Utah's legislature on how best to improve our air quality. Check out all 7 recommendations made by the committee [here](https://gardner.utah.edu/wp-content/uploads/Utah-Roadmap-Public-Draft.pdf).
 
+Worth noting here is that as long as fossil fuels are the dominant source of energy in the valley, Salt Lake City's quickly growing population (resulting in more traffic, more buildings, more economic activity) will lead directly to greater fossil fuel combustion, more pollution, and worse air quality.  
+
 **Conclusion**:
 
-Despite great progress from 1980 to 1995, air quality in Salt lake City has become worse in recent years. The pollutants most responsible for this alarming trend are ozone (smog) and PM2.5 (particulate pollution). Both of these pollutants are caused in large part by the combustion of fossil fuels within the valley's transportation and residential/commercial energy needs. Accelerating the adoption of electric vehicles and renewable energy sources is the most direct route to improving air quality in Salt Lake City.
+Despite great progress from 1980 to 1995, air quality in Salt lake City has become worse in recent years. The pollutants most responsible for this alarming trend are ozone (smog) and PM2.5 (particulate pollution). Both of these pollutants are caused in large part by the combustion of fossil fuels for the valley's transportation and residential/commercial energy needs. Accelerating the adoption of electric vehicles and renewable energy sources is the most direct route to improving air quality in Salt Lake City.
 
 **Future work**:
 
-The original dataframe I made for this post contains AQI data for all counties across the U.S. from 1980 to 2018. In order to make air quality data accessible for more people, I'd like to make an interactive plot using bokeh or plotly that would allow users to select their own state and county in order to get direct access to the plots I found useful in assessing Salt Lake City's air quality. This could help communities diagnose the quality of their air at an AQI level, then look specifically at which primary sources of pollution are at fault, thus better informing their efforts at improving their air.
+The original dataframe made for this post contains AQI data for all counties across the U.S. from 1980 to 2018. In order to make air quality data accessible for more people, I would like to make an interactive dashboard that would allow users to select their own state and county in order to get direct access to the plots I found useful in assessing Salt Lake City's air quality. This could help communities diagnose the quality of their air at an AQI level, then look specifically at which primary sources of pollution are at fault, thus better informing their efforts at improving their air.
 
 In addition, through this work I found I really knew very little about how air quality is measured, communicated, and how harmful polluted air can be. Placing more visible air quality monitors downtown in high foot traffic areas that display live readouts of air quality and pollutant mix could help educate others and further increase public awareness of the issue, potentially accelerating political action.  
 
