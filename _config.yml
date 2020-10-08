@@ -20,7 +20,7 @@ title                    : "Patrick DeBiasse"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Patrick DeBiasse"
-description              : "Data Science Portfolio"
+description              : "Data Analytics Portfolio"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -109,8 +109,8 @@ analytics:
 author:
   name             : "Patrick DeBiasse"
   avatar           : "/images/profile_pic4.jpg"
-  bio              : "Data Science Portfolio"
-  location         : "Salt Lake City, UT"
+  bio              : "Data Analytics Portfolio"
+  location         : "New Jersey"
   email            : #"patrick.debiasse@gmail.com"
   links:
     - label: "patrick.debiasse@gmail.com"
